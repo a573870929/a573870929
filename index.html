@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#4a7c59">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="香香子工作台">
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%E9%A6%99%E9%A6%99%E5%AD%90%E5%B7%A5%E4%BD%9C%E5%8F%B0%22%2C%22short_name%22%3A%22%E9%A6%99%E9%A6%99%E5%AD%90%E5%B7%A5%E4%BD%9C%E5%8F%B0%22%2C%22description%22%3A%22%E9%A6%99%E9%A6%99%E5%AD%90%E4%B8%93%E5%B1%9E%E5%88%9B%E4%BD%9C%E5%B7%A5%E4%BD%9C%E5%8F%B0%EF%BC%9A%E6%AF%8F%E6%97%A5%E4%BB%BB%E5%8A%A1%E3%80%81%E6%8A%96%E9%9F%B3%E7%83%AD%E7%82%B9%E3%80%81%E5%86%85%E5%AE%B9%E5%A4%8D%E7%9B%98%E3%80%81%E7%81%B5%E6%84%9F%E8%AE%B0%E5%BD%95%E3%80%81%E8%87%AA%E5%AA%92%E4%BD%93%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f8f6f2%22%2C%22theme_color%22%3A%22%234a7c59%22%2C%22orientation%22%3A%22portrait%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAMYUlEQVR4nO3dCXRNdx4H8F%2BSl7xsVCmtndp3oaG2aBtlUMxxmpYp01HTKeq0PR3LlJ4WVe0Yc%2FTI4RRVM61diW2sRexLhCAGMUgtQexkX%2Bf8%2FhGC3Le%2FvHfv7%2Ftx7nkvz3svL8nve%2F%2F%2F%2B7%2F%2Fe68PlaFenw8sLMvvB%2Fq0fvJin7L6Xm79Rih48PZAuPyNUfSgpzC47M1Q%2BKDHIDj9Jih80HMQfJ15MYofPM3ZGnQoPSh8MEprYPcLUPzgTaY2qf7UY83fmebjlgCg%2BMGbC9%2BRINi8DYDiBz0VP0tcOKrQJQFA8YPeit%2FWEFgNAIofjMxiAFD8oOe1vy2tgGYAUPwggVM7wgAMGQCs%2FcFotGr6qQCg%2BMGoSqttdIFAN8acvOzy1z0WAKz9weierHG0AGDoVsDa8x8GAGt%2FMFoItJ5XstZNrvtYAGWnuLhL2zlmTyuBAIDIDePHukDo%2FoA0xTWPjWAQDQEA0RAAEM0H%2FX%2BQDC0AiIYAgGgIAIiGAIBoCACIhgCAaAgAiIYAgGgIAIiGAIBoCACIhgCAaAgAiIYAgGgIAIiGAIBoCACIhgCAaAgAiIYAwGP8fP3I5CfnfGlyflJBAkz%2BFBIYQiGBQQ9ug9USGhRStASGULng0Cdu%2BfFQCjIH0qLtK2jhthUkAQLgJXx9fSkoIJDM%2FmZVhIH%2BZgo2B6n7weZgdT84MEg9p%2Bh%2BcNF9VeTBFGIOppCgEAoxB5G%2Fyd%2Bpz1KrSg2SQlQAfHx8ihb%2B58Nf%2BxJfSpxvfX18VBEWdQH81C1%2Fzd0Bv4ePm8ifF5O%2FWvh5%2Fn5F94sfD%2FAPILPJXxWyuv9gCTA9um8OMFOgfyAFmYtuAwPMThetK9WqjAAYzpiokdS1ZUdPfwxdqFbpBRXuvPx8MjoxG8FnUs55%2BiPohsnPj6pXqkoSyAnAZQTAHrWEbAeICcDZlGQqLNS8YDg8oVYVx67KrjdiNoIzc7Io5eZVqv6cjKbd2u8iLTOd0jLT1O19taTR%2FYw0dcuPnb2STBKICQA7f%2FWC7gOQk5dLmdmZlJ6dSZlZGeo2IyuTMrKL72dQRnZmUYFnpVN6ZgalZ2Wo%2B%2FwY388vMP7Gra1EBeDc1WTq3Ly9W79Hbl6uKtLs3BzKycspus19cJuXo4ZLW9Rtqvn6WWvn0837tygrO5sycjIpKyeLMrOz1Fqbb1G8riUqADuO7aPbaXeJCokKCgv4Rm0XFG0bFFJ%2BQYF6PD8%2FXxUaf%2F3ofj7l8ZKfR7l5vORSbn7eg68f3be2nfFi1doUPeIbzf%2Ff%2B984up12xw0%2FPZD0AFy9nUpX41M9%2FTHAi4gZBQIoDQIAoiEAIBoCAKIhACAaAgCiIQAgGgIAoiEAIJohrhS%2F6st%2Fe9UhhZL8vHU5LYmNIb1CCwCiIQAgGgIAoiEAIBoCAKIZ4ngAPgLLm%2FDJt1x9fs0CPjjHCw9lzPfCzyRuGNSbVCpfkcYP%2FIQa1ajv0vflA9anx3xPB04ddun7SocukAu1qNOEZoyY4lTxax1SySex%2FeKdUTSs97vY5%2BFCCICL%2FL5jL%2Fp6yDiqEFJe8zl8RobZ63%2By%2BD7fLpuhTk2ipc%2FLPWj6B5OoRuVqTn1eKIIAOInXzOMGfELv9xykTqCrhQ90HzvvK0pMPmnx%2FU4kn6a%2FzvmSrty6pvmcui%2FUpujhU6h%2F5zfUCXzBcfjtOeGlhq1p1sip1KlZO6sH44%2BeO5HOX%2F3Npve9fOMKfTr7Czp5IUnzOXzm6aE9%2FkDTP%2FhKnWkCHIMAOIBPfT6iz3s0cfAYqliugsXnJl0%2BS6PmTLC4Ri%2FNvYz7NG7%2B1xR7bI%2FF59WvVpe%2BGzaZhnQfqEIBAodBy1Kb%2Bi1peJ8hVK3i81af%2B%2BuRnTRzzTyHh2n5df9YPpNOXjijulhaQ6vc9XqzSx91%2Bvd%2FbV5CO47vxXlQbYQA2KhiuWfpL70GU5fmL9s0Nj53wwJau38TucK6A5sp6dJZ%2BmzAx1SlwnOaz6v8TCUaHfUh9evwO5qz4WeLXSgogi6QFbyRySM8cz7%2Bp03Ffyf9nuq6uKr4S3alPpo1juJOH7H63IY16tG09yfQ397%2BSPfnQnU3tAAWdGjyEr37%2BttUs7JtpwqPS0qg72Jm0x0%2B%2FaIb8PDoxIXT6I323WlI9wFqW8QSDmynpu1oZ%2BI%2BWhK7ii5ev%2ByWz6VnCEApmtVuTO%2F1GEiNazaw6ZfIJ7%2Bdt2mR6qq4G%2B8o49Yl%2FsxR%2BrT%2FMGpSq6HVFuyVlp2oa4uOtCtxPy2OXUkXUhGEYghACfWq1qFBkVHUrlEY2epsynma%2BstMunQ9hcoSX%2Btg9A8TqX%2Bn3jQ4Msrq3mGenxTRooNqFQ4lJdDqfRvpyNnjJB0C8GAKQ1REX2rboJXNvzg%2BI%2FTSnatp%2Bc7VHruYHLcGK3avo7ikIzSy71DVclnDQQhvFKaWC6mXac3%2BjbQtYTdl52aTRGIDwIXAa%2Fq3IvrZ3NUpdvTcCZq59ke1w8obcCGP%2BWESvda6i%2Bq6PRtqed9Eycsgjew7VG3nbD2yk7Yc3kHJ1y6SJOICwBeVjgyLoN7h3eyeT3M3%2FR7N27iQtibsIm%2B0LWEXHTgVT4Nee1NtKNs6TaJcUKga6eKFu3QchNhjey3OSTIKMQHg6QK9272uNgj5wtT2zsXfGL%2BNftqyzOuLonjC3ebDsfTnnoOo9YvN7Xp9vWp11cKv5anXvOHMXaysHGN2kQwdgNCgELXR1y2sKzWu6dgUZR7a5LW%2B3oYQ%2BXpo4%2BdPobB6LehP3QeoKRP2MPmZ1BwnXniUi0eddp84SAdPH1bXIDMKwwWAR0O4b%2F9qq84U3rC1w0dm8VUSufC5v69nPNKT8H0idW7WXo0WObJjLMA%2FgDo0DVcLb%2FwnnDtB8UkJKhQpds5x8jYmoxR963rNqWOTcLXG4n6%2Bo3jm5qLtK1V%2F2ijXFeafg7syfP2xbmERasSrqg1zmbR%2B17xi4YXxJL%2FD%2FzumwsArC711lXR7SCR3b8Ibhqm9tW0atKSggECn3o%2F%2FkEt3rFJDgno%2FztUa3jjmFuGtiL7q2AJX4GHUkTM%2FU%2Fsn9ESXLUDzOo1pypDxFg9AsRU34UtjY2j70T2GL%2FySG%2FU7j%2B9TC6%2FJoyL6UbPajZx6z%2FmbFuuu%2BHUbgMTkU7T%2B4K%2Fq8EBH8Xj3yt3raPuxPaogpIpLSlALDxLw0Cm3DPaeZzXhXCKtO7iF9Ei3XSBe%2B3MrwK2BPbi%2FGrNnvdoRNumPY932%2BfTm78uiVYvwTEh56tH2VeoZHmlx6nUxHhEaET2Wrt%2B9QXqkyxaAcXeF%2F2jRH35j8UB0xiMXvGMnZs9%2F6LfUS%2Boxe6Y9SHI3%2FR4t4ykeu9ZQu0ZtqFd4pDoISGunGo%2BU6bX4dR0Aduv%2BbTX9eMKg0aX%2Bf%2BqdG7QpfjttPLTNbVOUjaqwsFDtVeaFp1a80qojRbbu8thGM3d9%2BHerZ7oOAOMDRHgeC09vYNyf5z2XG%2BK20qEzRw0zlOlJt9PuqG4jL3Wer6mC0L5xW5oRM5f0TvcBYD9uXkwNqtdTY928xr9575anP5JhJV%2B7qI594MUIDBEA7t4Mjy69GwRg%2BAC4A%2Fdts3NzyChMfn5qMiA8DgHQsGDrL6rvaxS8pxwBeBrOCgGiIQAgGgIAoiEAIBoCAKIhACAaAgCiIQAgGgIAoiEAIBqmQmhYMHZW2f4lwCPQAoBoCACIhgCAaAgAiIYAgGgYBdKAI8JkQAA04IgwGdAFAtEQABANAQDREAAQDQEA0RAAEA0BANEQABANAQDREAAQDVMhNOCIMBnQAoBoCACIhgCAaAgAiIYAgGgYBdKAI8JkQAA04IgwGdAFAtEQABANAQDRfHp9PrDQ0x8CwFPQAoBoCACIhgCAaAgAiIYAgGgIAIiGAIBoCACIhgCAaAgAiIYAgGgIAIiGAIBoCACIhgCAaAgAiIYAgGgIAIiGAIBovusnL%2Fbx9IcA8ASufbQAIBoCAKIhACCaCgC2A0Ca4ppHCwCiIQAg2sMAoBsEUpSsdbQAINpjAUArAEb3ZI2jBQDRngoAWgEwqtJqu9QWACEAo9GqaXSBQDTNAKAVAKOwVMsWWwCEAPTOWg1b7QIhBKBXttSuTdsACAHoja01a%2FNGMEIAemFPrdo1CoQQgLezt0btHgZFCMBbOVKbTh0Qj4tsgzdwZqXs1I4wtAbgac7WoMtOiYLWAMqSq1a%2BLj8nEIIA7uTqXodbT4qFMIAruLOrXaZnhUMggGxQltuW%2FwcO1Xpd1M7NSAAAAABJRU5ErkJggg%3D%3D%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAjmUlEQVR4nO3dB7hdVZk%2F4C%2B9AQIS6TBUqYEQepDQSygSRIqiwqA4A5Zx5g%2BWQR2VQYw6ozAoRRjpLUi%2F9EDonVAMEEgg1NAChiQ3nf%2BzdnLxwiSk3bP3OWe9L89%2BTrk3Z%2B%2B7b8j322utvVanYJEMPuGwD5wygPrTcuLFnao%2BhkbiZM2HQg%2FQHASDeRMAFHuA7LRoLcgzALi6ByD3QJDND6zoA7AwWjIJA039Qyr6ACyJliYOA035gyn8AHSkliYMAk31Ayn8ANRSSxMFgYb%2FQRR9AKrQ0uBhoGEPXuEHoB60NGgQ6BwNSPEHoF4MbtAZYhsqtTTqSQYgDy0N1BrQEAeq8APQSFoaIAjUfReA4g9AoxncAC3WdZtQGuHkAUCjtgbUZQuA4g9Asxhcpxe0dZVK6vUkAUCztQbUTQuA4g9AsxtcRxe6dREA6umEAEAONa%2FSpoh6OQkAkFuXQGU7VvwBaCZDN1x1gd9z%2FNOv1k0IqGSnij8AuRT9hQkDVYSA0neo%2BAOQc%2BGfXxAoOwSUujPFH4BGNrQDC%2F%2B8gkCZIaC0uwAUfwAa2dAaFv%2B2zy%2BzVpYSABR%2FABrZ0BoX%2F%2Fb7Katm1jwAKP4ANLKhJRX%2F9vsro3bWNAAo%2FgA0sqElF%2F%2F2%2B611Da1ZAFD8AWhkQysq%2Fu33X8taWpMAoPgD0MiGVlz8ywgBHR4AFH8AqP%2Fa2qEBQPEHoNHVy9X%2Fx4%2Bno2tsXawGCACUq8MCgKt%2FABrd0Dq7%2Bq9lK0CHBADFHwDK0VE1d4kDgOIPAOXqiNprDAAARP02%2F9fq%2BJYoALj6B4BqLGkNXuwAoPgDQLWWpBbrAgCADC1WAHD1DwD1YXFr8iIHAMUfAOrL4tRmXQAAkKFFCgCu%2FgGgPi1qjdYCAAAZWugA4OofgGZ2%2FNOvRqMf36LU6oUKAIo%2FADSGha3ZugAAIEMLDACu%2FgHIxfF12g2wqMe1MLVbCwAAZEgAAIA6bgWo1fF8YgDQ%2FA8AjWlBNVwLAADUaStALY9jvgHA1T8AOTu%2B4hDQEfv%2FpFquBQAA6iwElLHfeQYAV%2F8AUE0I6Oj9za%2BmawEAgDoJAWWGDQEAAOqgOJfd0tDp429o%2FgeATzZ0w1Wj0Qp%2Fy4kXf6Tmdy1lrwDQRI6fW7SXJAhUfZeBAAAAHVDEFyYMVF302%2FtIc4DmfwBoXu27AQwCBIAMCQAAkCEBAAByDgD6%2FwGgubWv9VoAACBDAgAAZEgAAIAMCQAAkGsAMAAQAPLQVvO1AABAhgQAAMiQAAAAGRIAACBDAgAAZKiTOwAAID9aAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQ12rPgCAXPXo1iOW7tUnlurVJ96eOCEmtU6u%2BpDIiAAAsAQ6deoUfXr2jqV6zinkS%2FdaKpbuvdTcwr7Uh6%2FT15fu3e69Xn2iW9duH37O%2F1xzdtzw0G1%2BF5RGAACylwrxnCLeO%2Fr07DPneSrgc4v6h9s8Xvfu0asIAUtqjb6rZv97oFwCANDwenXvGb2L4t0revdIj3O2VJxToZ7zOhXsOe%2B3Fe8%2Bvea8373dlXhV1lhxtaoPgcwIAEClV96pSH9km1vE%2F%2F7871tR1FMRn1vk09fT886dG38885qfEQAolwAALLTU1J2utnt27xm9esx57D33ea8eveZcic8t1u3fS4%2B90%2BvuHy3qXbv4J6jNckstW7RMGAhIWfzfB016Zd2jW%2Ffo2a1H9OzeI3qkoj33ebF97P3ie7v3%2BLBYtz3%2FeKHv3q171T9aU0utAH8d92zVh0EmBAAo4ao5FeRuXbpG967do1vX9NgtunXtHj26dSveSwW4rWin16nQpu9Jjz3mvk5fS7eN9UyPqXjP%2Fd70Xo%2Fucx%2FnFv2OGJRG%2BdYQACiRAECp2hem9Lz478O30vM5W%2BcPHzt%2F%2BF6X4nnndl%2FvHJ07d4ounbsUW%2BoH7lJs6XXn4s%2F%2Bn6916RJdO3ed%2B9jlo6%2B7zPne1Czdte0xbV27FsU7bW3vpWKdvr%2Fbh8%2Fnfs%2Fcwt2%2B2GvmZmG5E4AyCQCUYujXfxIbr7mBsw2fwJ0AlKnxh87SEEa%2FMrbqQ4C6504AyiQAUIrRr45xpmEh7gRIswRCGQQASvHcq1oAYGGs8RkzAlIOAYBSvD7hjXi%2FdZKzDQtxJwCUQQCgNFoBYMGMA6AsAgClef61F5xtWIDVdQFQEgGA0ggAsGBaACiLAEBpBABYMHcCUBYBgNK88e5bBgLCQnAnAGUQACjVmNdedMZhAdwJQBlMBUypxr7%2BYmy%2BzibOOkTE9JkzYlLrpHh%2FyqSY2DopJk2ZFO%2B3To63J05wfqg5AYBSjXl9nDNOU%2Fnggw9iyrTWmNQ6uejiSo8feT51clHg0%2BtU3NsX%2FOkzpld9%2BGRMAKBUY8frAqD%2BzJw1MyZPnVIU7OJx6pwinh4nt87%2FdSrq6ftTCIBGIwBQqlfefr246knr20NHXoFPmTYlpkxtjcnTWouiPKUo5G2Pk4uvFQV86pR2W3rdGtNmTPPLIDsCAKWaPXt2vPjGy7H%2Baus485lLfxdap0%2BdW7xbo3XuYyrUU6a3Rmt6nPbRrSjsxffMKeDFn5s%2B1RU4LAYBgNIJAI15lT1txvSYOn1qUXCnTp%2F2kecfeS8V6LmPxdeK4p2%2BNxX5v39d%2FzdUSwCgdGPHGwhYqxHlqSk7FequXbrGsn2W6bDPPuI33zYyHZqMAEDpXhz%2FUlNfKc%2BYOSNmzJoZ02dOjxkzZxavU3GeMWvGh6%2Fb3puzTS%2Buhovncx%2BnpT87Y%2B5jUdjnfE9bgZ%2Fz%2BPeCnz6j%2FUC03frvGN878J8qPRdAfRMAqKQFYNRLo%2BcWrDlFKz39YO7z9KKtlM3%2BYHbxLekx9RmnPzM7fb14nF1sxfPZc56nx1lzn8%2BaPStmzZo19%2Fmc1%2BnrM4vHWTFz1qziefqeNAp81tz35jy2ez1r1pziPWtm8X6xpUI%2B9%2F2291JxT38GoBEIAJQuDd467qz%2FcOYBKmQqYADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQ50Gn3DYB1UfBNU6aq8vx4ED9%2FFrgMy8P2VSHPrLo6s%2BDCqiBQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAy1LXqA6B6Y19%2FMe588r6qDyN7Ky33mVh%2FtXWa9jy8%2BMbL8dKbr1R9GLQzZVqr85GxToNPOOyDqg8CcrfFuv3iB4d8J%2Fr07B3NasbMGXHWDRfE9Q%2FeUvWhAFoAoHpf2GHfOHKPw6JTp07RzLp17RbH7Hdk9Ft7ozjlqrNi8tQpVR8SZE0XAFSke7fu8d0DvhE79RuY1e9gh423ifVWWTtOvvSUGP3qmKoPB7JlECBUoO%2BnPh2%2F%2BfpPsyv%2BbVZcrm%2F8%2Bhv%2FEUMGDm76lg%2BoVwIAVNDff8oxJ8U6q6xVs3188EHHDu2ZOn1adLSuXbrE1%2Fc6PE782g9jhWWW7%2FDPBz6ZAAAl6dy5c3xl1y%2FGz7%2F6%2FVim99I1288rb70W5992eYd%2B5s8u%2BHWMf%2FfNqIXN19kkTvvWr2JQv%2B1r8vnAvAkAUILlllo2%2FvOIH8WhOw2paZP32NfHxfFn%2FzzemTihQz%2F3tXfGx7%2Bd8ZN47tWxUQtL9eoTx3%2FxW%2FH9g79dPAdqTwCAGtt0rY3i1GNPin5rbVTT%2FTzz8vPxg3N%2BEX%2BbPLEmn%2F%2Fe5InF5z80emTUyo6bble0BvRfZ9Oa7QOYQwCAGjb5f3mXL8RJR%2FyoaAGopSdeGBUn%2FPmkmt9al8YC%2FOLC38ZNj9xes32k8QAnHvHD%2BO4BRzf1vAhQNbcBQo1m9Tvui8fGBquvV%2FPz%2B%2BCzj8UvL%2FldTJ85I8owa%2Fas4j7%2Bt957Ow7f9Ys1288eA3aKLdffLP7nmnPigWceqdl%2BIFcCAHSwXTb%2FXByz75HRq0fPmp%2FbGx8eHqdde07Mnj07ynbxHVfGq%2B%2BMj%2B8N%2BWYxp0EtLL%2F0cvGTL%2F9bMVX16defW7PuDciRAAAdJDVXf2v%2Fo4p%2B7DJcMHxYXHz7X6JKqTCPn%2FBm%2FPjL%2F1oU61pJ5zTdLXBmy%2Flx%2B%2BN312w%2FkBNjAKDDbmU7uZTin5rgf3flGZUX%2FzZpNr9%2FOf3H8fxrL9R0P%2BnWyf930DFx0pH%2FHqv1XaWm%2B4IcCACwBFIzf7rqT7f49f3UCjU%2Fl63Tp8bPLvhN3PLoiKgn6bbD4%2F70s7j7qQdqvq%2FN1t44Tjv25PjqbgfXrOsBciAAwGLafO1N4g%2FfGhp7b7VraUX2%2B2f%2FIh557vGoR9NnTI%2BTLzslLhx%2BRYfPRPhxXbt0jUMGHRCnf%2FvXsdVn%2B9d0X9CsjAGAxbjq%2F8c9vxR7b7lrafPYj35lTPziot%2FGhPffi3qWCv9Ft18Rz702No476Nia38aX1hT4j8OPi%2FuffiT%2BdOMF8fqEN2q6P2gmWgBgEWz92f7xx28PjcFb7VZa8b%2F98Xvi%2B2f%2FvO6Lf3sPPftYfPeP%2Fx4vjH%2BplP1tu%2BGAOP07vy6WVe7do1cp%2B4RGJwDAQkgj3H946Hfjp4cfV0pff9vV9Lm3XBq%2FGXZaaff4d6R0Nf5vZ%2F60tFH7qVvgoM%2FtF2d9779jzwE7W2UQFkAXAHyCdJW%2Fz9a7x9d2P6TUK8s02O%2FXl5%2FW8BPgTJsxLX4z7A%2Fx7MvPx9f3%2FkqxAmCtLdtnmfjOAd%2BIfbfZI85sOS%2BefPHpmu8TGpEAAPOx1kprxrc%2Ff1R8drV1Sz1HaTW%2FEy%2F%2B73j5rVeb5ndz7QM3x3OvvRA%2FOOTbpbWgrL3ymnHyUT8uZkr88y2XxLg3Xi5lv9AoBAD4mDRwLS3bm67803z%2BZbrrqfvj91eeWbQANJtnXn4uvnXaD%2BNfhnwztttwy1LHbWy1%2FuYxfORdcf5tw%2BKtv71d2r6hngkA0K65P%2FUdp%2Bb%2BNOlMmdLkPufcdHFcdW9LU%2F8%2BJrVOjhMv%2Bq%2FYb9s946g9vxTdunYr7Xe7a%2F8di4maUmvEZSOujvdbJ5Wyb6hXAgBExIZrrB%2F%2FvM%2FXYp1V1ir9fEx4%2F9345SW%2Fj1Evjc7md3Ht%2FTfFqHHPxg8O%2BU6s8umVSttvChwHDtynCHp%2Fuef6uOa%2BG2PKtNbS9g%2F1RAAga59eZvk4YvdDYufNdqhk1PjIsU8Vg%2F3em%2FS3yM2Y11%2BM7%2FzhR3Hs%2Fv9YnP8qunkO2H7vuDIFgftvitZpzdftAp9EACDbyXy%2B%2BLn9Y8j2gyuZTjY1%2BV84fFhcduc1NZ81r56lsQ7pLoGHRo8sVlBcqlefUve%2FdK%2Bl4qu7HRJDtt8nht19bVz3wM0xdfq0Uo8BqiIAkJUunbvEXlvuEl%2Fe5QvxqT7LVHIMb7z7Vgy9%2FNR45uXnK9l%2FPRrxxL3x1xefie8d%2BE%2FFwkplW7r3UsUkQql7IHUNXP%2FgLVoEaHoCANlII8%2FTP%2FKrrrBypcvnnnr1n%2FQ7z8PbEyfECef%2BMvbfds84Yo%2FDontJAwTbS6Ew%2FR1JrUOpNeDq%2B26MiVPeL%2F04oAwCAE1v07U2iq%2FtdnAx0K8qqVn5jJZz4%2BZH7qjsGBpB6g5JRffR55%2BM4w46ppJBmUnqijh0pyExZODguOnh2%2BMv97S4fZCmIwDQtDZYfd34ym4HF6v2VX3%2F%2B2%2BH%2FSFes1DNQkuTIP3rmT%2BJQwcNiS%2Fu%2BPlSZhCclx7desT%2B2%2B0Vg7fePUY8cU8xTuClN5tngibyJgDQdNZZ%2BR%2BKEd5VLxM7c9bMuGD4sLji7uti9uzZlR5LI5o5a1Zx%2Fu4Z9VB8b8jRlbUGJCmApHkEdtn8c%2FHo80%2FEVffeUDxCIxMAaBprrrh6fGnnA2PgRltXvhDM2NfHxW%2Bv%2BEO8aPrZJfbC%2BHHxvTN%2BEgfusE98aecvVDI2oE36ezVgvc2KbdybrxQTN93x%2BD0NuVgTCAA0vPVWXTsOGXRAbLvBgMoLf7rSv%2Fyua%2BOi24cVV7B03G2Tl995Tdz39MPxLwccXel4jjZrfma1%2BO4BR8cRux8aLQ%2FeGtc9eEuW8znQuAQAGtbGa362GKi1xbr9oh6kK8LfXXlGjH5lTNWH0rTSQknH%2FelnxVTCX93t4OjVvWfVh1TcOXDYzgcWYxXuHfVgcQvhUy8%2BU%2FVhwQIJADScdJ94Kvyb%2FsOGUQ9SX%2F%2BlI66Oy%2B68unhO7e8USFP43jfqofjm4K%2FGdhttVRenPI0TSGsNpC2tPHj9g7fG8MfvMp8AdUsAoGEm8Nlhk23iCwP3qXQw2LxG%2BP%2F%2BqjONDK%2FAW397p1g2OQ32%2FOd9j4gVl%2B0b9TQe5Zj9jowj9zwsbn%2F87qKL4IXxL1V9WPARAgB1P2Vvmrnv89vtVdo68gs7he15t15WLGqT81S%2B9eChZx%2BLJ8aOisOK%2B%2Fb3qeyWwXlJXRSDt9qt2J57dWwxD8SIJ%2B%2BNyVOnVH1oIABQv4v0pKKfin9auKWepHnrT7vmHBPD1JFpM6bFn2%2B5pGhyP3a%2Fo2KTf9gg6nGwatq%2BsffhcfdfH4ibHx0RT734tABJZbQAUFc2WH29YirYgRtvU1dXcm1Nzme2nBf3jnqo6kNhPtIkPd8%2F%2B%2BexU7%2BBRfP7CsssX3fnKi0%2BleYTSNvrE96IWx4dEcNH3i1QUjoBgMql%2B7rTwKlU%2BOupf79Nup0v3e998R1%2FsVJcg7jjiXuKWwYP3nH%2FOHCHfSudO%2BCTrLz8isXdDGniqr%2BOe7YYL3DXU%2FfrIqAUAgCV%2BcyyK8Q%2BW%2B8eew7YuViNrR498cKo%2BMO1%2F1tMTUvjdQucf9vlRb%2F7UXt9OQZuvHXUqzR%2FReq2SNs%2F7fO1optp%2BON3F%2BMb3FlCrQgAlKpz586x5XqbFX37W63fv3hdj96d9F6cfeOFcfvj91R9KCyhN957K0665HfFolDptsG1Vlqjrs9pt67dYvuNtiq2Sa2T455RD8ZdT95fhNE0IRJ0FAGA0q7299hip9h9wE512S%2FbZsbMGcVqdJeMuNL9203myRdGxXf%2B%2BKPYvf%2BgOHzXg2L5pZeLepdWJUwtZGlLyxKn8Sd3P%2FWAMECHEACo6b37W2%2BwRew1YOdi7vSqp%2BldkDSxzJ9uvDDGv%2Ftm1YdCDadqvumR2%2BOOJ%2B6NA7bfOw763H7Ru0evhjjfy%2FReumg5S1tbGEjjBZ584WktAywWAYAOl5pYd918x9h5s4Gx7FKfaojFZs5oOb%2B4QiSf8QGXjrgqbnx4eDGN795b7lp3d50sbBhI3QQPjX6sGPT46HNPFHNUwMIQAOgQqdCnW6926%2F%2B5WGulNRvirL43eWKcf%2BtlxRWhyXzy9LfJE%2BP06%2F4c19x7Q3xtj0Njh423iUaTugl23myHYkurEj4%2B5qm4%2F5lHis3iRHwSAYDFlm6tSk38u22%2BY2yxXr%2Biyb9Rrv6uuvfGGHbXNTFlWmvVh0MdeG3CG%2FHLS34f666yVnFbXuqyatT%2FJ9PUyGn71v5HxbOvPB8PPvtYPDx6ZIwdP07Q5SMEABZJKvL91920uG9%2Fuw23bJj%2B07b%2B35sfvSMuHD4sJrz%2FXtWHQx16%2FrUX4ifn%2FapYbjgFgX5rbRSNKo25SRNrpS39LOnv%2FCPPPV6EgcfGPGmuAQQAFu4fkrTy3qB%2B28fAjbau23v2FzTAL00V%2B8rbr1d9KDSAp18aHT8858TYbO2Ni0l6UiBodMsvvWzsvsWgYku3Ez790nPF2IHHxjwVY19%2FUetAhrQAMN%2Biv9Ea6xd9ojtssm3xj0cj%2Buu4Z%2BKcmy4uVu2DRfX42L8W25brbx6H73JQMZd%2Fs7TktU08dGREvD9lUvFzppaBkWOecidMJgQA%2Fv6XoUuX6LfWxsUEJKl5vxFG8M%2FPmNdeiPOHDytmUoMllZrN05aCwCGDDijCcTNJrXppue20JW%2B8%2B1YRBtJAQv8PNS8BIHNp0FAawLf9RlvHNp%2FdohhR3MjGvfFyXDB8WHFLlJH91CoIpLEBh%2B40pOgiaEYrLte3uMUwLWFM8%2Bo0%2BITDLGaemXRlv%2FX6%2FWPrz%2FaP%2Fuv2i57de0SjS337aXBfmhhF4acsG6y%2Bbhw6aEgx6r7ZPPr8E%2FHjc0%2Bu%2BjCoIQEgE2mVvVTw07beKmvX%2Fax8CyvN2nfR7X8pVlFLo%2FyhCmuvvGYcvOPni0Gy9bq%2BxaKYPHVKHHPq8fH2xAlVHwo1pAugiaWBPkcP%2FkrRp98I854vitfeGR%2BX3Xl1sY66BVKo2tjXx8XJl55SNJ0P2X5w7L7FTg3dsnbWDecr%2FhkQAJpYKoyvvPVaUxX%2FcW%2B%2BEpeNuDrufOo%2BV%2FzUnTR47vTrz40Lh18Rg7feLfbbdo9YbqnGuoMmLUV8y6Mjqj4MSqALIAPfHXJ0sRJfI0uj%2Bi%2B98%2BpiARR9%2FDSKtLTvLpvtEEMGDo7V%2B64ajdD0%2F8%2BnHh%2FvaPrPghaADJx2zTmxRt%2FVigFLjSbdv3%2FJiKvcikRDSstLp7Um0gyUaXrh%2FbbZo65XxkxN%2F4p%2FPrQAZOLTyywfpxxzUizbZ5loBOlWq2F3X2eFPprOKp9eqQgCu20xqK6m0jbqPz8CQEY2XWuj%2BM8jfli3i%2FbMnDUr7nzy3qLw%2F%2Boff9yQUw7D%2FBz8n1%2F%2FyPz7vXr0LBbS2nfbPWO1FVau9MSlRbHSqP%2B3%2FvZOpcdBuXQBZCStd3%2FerZfFkXscFvWkddrUYl32q%2B5tMfKYbKS%2F99c%2BcHNc9%2BAt0X%2BdTWPfbXaPrdbvX8lthGffeKHinyEBIDNX3H1dbLLmBnUxcUlaneya%2B2%2BMlgdvtTIZ2UqDWlPze9pSV90eA3aKPQfsHH0%2F9elS9p%2FWAEgBnPwIABn%2BY%2FPbK%2F4Ypx77y9L%2BgZnXkqtX33dj3PnkfTFz1sxKjgHqURqAd%2FHtf4lL7rgytlp%2F89hry12Lx1q1CkybMS1Oueqsmnw29U8AyND7rZPi15efFr866seljUZOs%2FSl%2BflT4U8r9AGfHNQffPaxYlthmeVjzy13LiYX6ujQfu6tl1n5L2MCQKZSEU631x2205Ca7icNekq3QV17%2F03x5ntv13Rf0IzSdLxpYqE05fXma28Su28xqFits3u37kv0uc%2B8%2FHxcc9%2BNHXacNB4BIGOpqXHAev1i%2FVXX6fDPTjMQpgFOtz42IqZOn9bhnw85tgqkJXrT1qdn79hx0%2B1it%2F6DFmt%2Bj9T19vurzjCpVuYEgMynCv6vK04v5gdIywJ3xOc98Myjcf0Dt8TIsU91yDEC825Zu%2BGh24pttb6rxO79B8Uum%2B%2Bw0NN%2BXzri6njpzVed2swJAJl7%2Ba1Xi2V0l%2BTWwAnvvxs3PXx7tDx0W%2FEcKE9qbfvfmy%2BOP99ySWy29saxU7%2BBxQJgqZVgXlLhTwtpgQBAXHlPSwzadPtiSdNF8cQLo4qr%2FTS4z4p8UH0XwcgxTxXbadeeU9w9sPNmO8SW62%2F%2BYQtf%2Bp5Trj7L3TcUBACK4n3q1X%2BK%2F%2Frmzxd4V8D7UybF8JF3RcvDtxVXHkB9rkGQFs5KW5pueODGWxctA6nF7%2BmXRld9eNQJAYDC6FfHxK2P3VmMMP64dNWQrvbTaP70D0r6xwVoDGma37S8ryV%2B%2BTgBgA%2Bde8ulseOm20aPbj0%2BnKkvjeJP%2Ffvj333TmQJoIgIAH3p30ntx1b03xForrRk3PTI8Hnp2pL59gCYlAPARabEgAJpf%2BctOAQCVEwAAIEO6AGh6k1onx20j76r6MGgw224wIFZcrm%2FVhwE1IwDQ9N6bPDHObDmv6sOgwayy%2FIoCAE1NFwAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIUNeqDwBqbbUVVo7rf3GREw3QjhYAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGulZ9AFBrk1onx20j73KiWSTbbjAgVlyur7NG0xIAaHrvTZ4YZ7acV%2FVh0GBWWX5FAYCmpgsAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZKhr1QcAtbbaCivH9b%2B4yIkGaEcLAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQ12rPgCotUmtk%2BO2kXc50SySbTcYECsu19dZo2kJADS99yZPjDNbzqv6MGgwqyy%2FogBAU9MFAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGeo0%2BITDPqj6IACAcmkBAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMCQAAkCEBAAAyJAAAQIYEAADIkAAAABkSAAAgQwIAAGRIAACADAkAAJAhAQAAMiQAAECGBAAAyJAAAAAZEgAAIEMCAABkSAAAgAwJAACQIQEAADIkAABAhgQAAMiQAAAAGRIAACBDAgAAZEgAAIAMdW458eJOVR8EAFCeVPu1AABAhgQAAMiQAAAAGRIAACBDAgAA5BoA3AkAAHloq%2FlaAAAgQwIAAGRIAACADAkAAJBzADAQEACaW%2FtarwUAADIkAABAhgQAAMg9ABgHAADN6eM1XgsAAGRIAACADP2fAKAbAACay7xquxYAAMiQAAAAGZpnANANAADNYX41XQsAAGRovgFAKwAANLZPquVaAAAgQ58YALQCAEBjWlAN1wIAABkSAAAgQwsMALoBAKCxLEzt1gIAABlaqACgFQAAGsPC1uyFbgEQAgCgvi1KrdYFAAAZWqQAoBUAAOrTotZoLQAAkKFFDgBaAQCgvixObV6sFgAhAADqw%2BLWZF0AAJChxQ4AWgEAoFpLUouXqAVACACAaixpDdYFAAAZWuIAoBUAAMrVEbW3Q1oAhAAAKEdH1dwO6wIQAgCgtjqy1hoDAAAZ6tAAoBUAAGqjo2tsh7cACAEAUP%2B1tSZdAEIAANR3Ta3ZGAAhAADqt5bWdBCgEAAA9VlDa34XgBAAAPVXO0u5DVAIAID6qpmlzQMgBABA%2FdTKUicCEgIAoD5qZOkzAQoBAFB9baxkKmAhAACqrYmVrQUgBACQu5aKin9S2Y7bG3zCYR9UfQwAkNNFcF2sBlgPJwIAcqp5dREA6umEAEAOta5uDqQ9XQIANJOWOir8ddcCUO8nCgCaqabV5UG1pzUAgEbUUqeFv65bABrpBAJAI9auuj%2FA9rQGAFDPWhqg8LdpmANtTxAAoJ60NFDhb5gugGY50QA0p5YGrUkNedDtaQ0AoAotDVr42zT0wX%2BcMABALbU0eNFvr2l%2BkPYEAQA6UksTFf42TfcDtScIALAkWpqw8Ldp2h%2Fs44QBAHIv%2Bu1l8UN%2BnDAAQI5Fv73sfuB5EQgA8tKSYcH%2FuOxPwPwIBQDNQbGfNwFgEQkGAPVJoY9F8v8BDhCn2fR92SEAAAAASUVORK5CYII%3D%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <title>香香子工作台</title>
+  <style>
+    :root {
+      --primary: #4a7c59;
+      --primary-light: #e8f3ec;
+      --primary-dark: #3a6346;
+      --accent: #d4a574;
+      --bg: #f8f6f2;
+      --sidebar: #ffffff;
+      --card: #ffffff;
+      --text: #3a3a3a;
+      --text-sec: #888888;
+      --border: #ece8e0;
+      --shadow: 0 2px 12px rgba(74,124,89,0.08);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-top: env(safe-area-inset-top, 0px);
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* 桌面端：左右布局 */
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* 左侧导航栏 */
+    .sidebar {
+      width: 260px;
+      background: var(--sidebar);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; bottom: 0; left: 0;
+      z-index: 100;
+      padding: 24px 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+    }
+    .brand-icon::after {
+      content: "";
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      top: 4px; right: 4px;
+    }
+    .brand-text h1 {
+      font-size: 18px;
+      margin: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .brand-text p {
+      font-size: 12px;
+      margin: 0;
+      color: var(--text-sec);
+    }
+    .nav {
+      margin-top: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+    }
+    .nav-item:hover { background: var(--primary-light); }
+    .nav-item.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(74,124,89,0.25);
+    }
+    .nav-icon {
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    /* 右侧主内容区 */
+    .main {
+      flex: 1;
+      margin-left: 260px;
+      min-height: 100vh;
+      padding: 28px 32px 60px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .topbar-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar-date {
+      font-size: 13px;
+      color: var(--text-sec);
+      margin-bottom: 2px;
+    }
+    .topbar-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .sync-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-sec);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sync-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    .page { display: none; animation: fadeIn 0.25s ease; }
+    .page.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 数据概览 */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat-value {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-sec);
+      margin-top: 4px;
+    }
+
+    /* TRAEWork 卡片看板 */
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .board-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--primary);
+    }
+    .board-card.yellow { border-top-color: var(--accent); }
+    .board-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .board-card-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .board-count {
+      font-size: 12px;
+      color: var(--text-sec);
+      background: var(--bg);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* 任务项 */
+    .todo-list { display: flex; flex-direction: column; }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .todo-item:last-child { border-bottom: none; }
+    .todo-check {
+      width: 20px; height: 20px;
+      accent-color: var(--primary);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .todo-text {
+      flex: 1;
+      font-size: 14px;
+    }
+    .todo-item.done .todo-text {
+      text-decoration: line-through;
+      color: var(--text-sec);
+    }
+    .todo-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .todo-del {
+      width: 22px; height: 22px;
+      border: none;
+      background: transparent;
+      color: #ccc;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      border-radius: 6px;
+    }
+    .todo-del:hover { background: #fee; color: #c44; }
+
+    /* 新增任务 */
+    .add-task {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .add-task input {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+    .add-task input:focus { border-color: var(--primary); }
+    .add-btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .add-btn:hover { background: var(--primary-dark); }
+
+    /* 灵感 */
+    .inspiration-box {
+      background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+      border: 1px dashed var(--primary);
+    }
+    .inspiration-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .inspiration-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .insp-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .insp-tab {
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-sec);
+      transition: all .15s;
+    }
+    .insp-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .saved-list { display: flex; flex-direction: column; gap: 10px; }
+    .saved-item {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .saved-text { flex: 1; font-size: 14px; }
+
+    /* 热点 */
+    .trend {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+    }
+    .trend h3 { margin: 0 0 8px; font-size: 15px; }
+    .trend p { margin: 6px 0; font-size: 14px; color: #555; }
+    .trend .meta { font-size: 12px; color: var(--text-sec); margin-bottom: 8px; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    .trend-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .xxz-mini-btn {
+      flex: 1;
+      font-size: 13px;
+      padding: 9px 6px;
+      border: 1px solid var(--primary);
+      background: #fff;
+      color: var(--primary);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .xxz-mini-btn:active { background: var(--primary-light); transform: scale(.97); }
+    .xxz-kw-hint {
+      font-size: 12px;
+      color: var(--text-sec);
+      margin-top: 6px;
+    }
+    .xxz-kw-hint b { color: var(--primary); font-weight: 600; }
+
+    /* 胡楚靓风格：热点卡片新交互按钮 */
+    .xxz-go-btn {
+      flex: 1 1 100%;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 8px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: all .15s;
+    }
+    .xxz-go-btn:active { background: var(--primary-dark); transform: scale(.98); }
+    .trend-actions { flex-wrap: wrap; gap: 8px; }
+    .xxz-mini-btn { flex: 1 1 45%; min-width: 88px; }
+
+    /* 复盘 */
+    .review-form label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-sec);
+      margin: 12px 0 6px;
+    }
+    .review-form input, .review-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+      font-family: inherit;
+    }
+    .review-form input:focus, .review-form textarea:focus { border-color: var(--primary); }
+    .review-form textarea { min-height: 80px; resize: vertical; }
+
+    .review-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .review-item {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-sec);
+      margin-bottom: 8px;
+    }
+
+    /* 备忘录 */
+    .memo-area {
+      width: 100%;
+      min-height: 200px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      font-family: inherit;
+      outline: none;
+      resize: vertical;
+    }
+    .memo-area:focus { border-color: var(--primary); }
+
+    /* 同步提示 */
+    .sync-tip {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-sec);
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        bottom: auto;
+        right: 0;
+        height: auto;
+        max-height: 56vh;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0 0 20px 20px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        padding-top: calc(12px + var(--safe-top));
+      }
+      .sidebar.open { transform: translateY(0); }
+      .main {
+        margin-left: 0;
+        padding: 80px 16px 40px;
+      }
+      .mobile-header {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: 56px;
+        background: var(--primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--safe-top) 16px 0;
+        z-index: 99;
+      }
+      .mobile-header .brand { margin-bottom: 0; }
+      .menu-btn {
+        width: 36px; height: 36px;
+        border: none;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        border-radius: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .board-grid { grid-template-columns: 1fr; }
+      .topbar { margin-top: 8px; }
+    }
+    @media (min-width: 769px) {
+      .mobile-header { display: none; }
+    }
+
+    /* 成长路线 */
+    .skill-progress { margin-bottom: 6px; }
+    .skill-progress-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 14px; font-weight: 600; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .skill-progress-track {
+      height: 10px; background: var(--border); border-radius: 5px; overflow: hidden;
+    }
+    .skill-progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--primary), #52c41a);
+      border-radius: 5px; transition: width .3s ease;
+    }
+    .phase-card {
+      background: var(--card); border-radius: 16px; padding: 16px;
+      box-shadow: var(--shadow); margin-bottom: 14px;
+      border: 1px solid var(--border);
+      transition: all .15s;
+    }
+    .phase-card.mastered {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, #fff 0%, #f0fff4 100%);
+    }
+    .phase-card.locked {
+      opacity: .55;
+      pointer-events: none;
+    }
+    .phase-card.locked .phase-header { pointer-events: none; }
+    .phase-header {
+      display: flex; align-items: center; gap: 12px; cursor: pointer;
+    }
+    .phase-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: var(--primary-light); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .phase-title-wrap { flex: 1; }
+    .phase-title {
+      font-size: 16px; font-weight: 700; color: var(--text);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .phase-badge {
+      font-size: 11px; padding: 2px 8px; border-radius: 10px;
+      background: var(--border); color: var(--text-sec); font-weight: 500;
+    }
+    .phase-badge.done { background: var(--primary); color: #fff; }
+    .phase-badge.lock { background: #f5f5f5; color: #999; }
+    .phase-sub {
+      font-size: 13px; color: var(--text-sec); margin-top: 3px;
+    }
+    .phase-body {
+      margin-top: 14px; padding-top: 14px;
+      border-top: 1px dashed var(--border);
+      display: none;
+    }
+    .phase-card.open .phase-body { display: block; }
+    .phase-goal, .phase-pass {
+      background: #f8f9fa; border-radius: 10px; padding: 10px 12px;
+      font-size: 14px; line-height: 1.6; margin-bottom: 10px;
+    }
+    .phase-goal b, .phase-pass b { color: var(--primary); }
+    .step-item {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px; margin-bottom: 10px;
+    }
+    .step-item.done { background: #f6ffed; border-color: #b7eb8f; }
+    .step-header {
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .step-check {
+      width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0;
+      cursor: pointer;
+    }
+    .step-title {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      flex: 1; line-height: 1.5;
+    }
+    .step-title.done { text-decoration: line-through; color: var(--text-sec); }
+    .step-actions {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; margin-left: 30px;
+    }
+    .step-btn {
+      padding: 6px 12px; border-radius: 8px; font-size: 12px;
+      border: 1px solid var(--border); background: #fff; color: var(--text);
+      cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
+    }
+    .step-btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .step-btn:disabled { opacity: .5; cursor: not-allowed; }
+    .phase-footer {
+      margin-top: 14px; display: flex; justify-content: flex-end;
+    }
+    .phase-master-btn {
+      padding: 8px 18px; border-radius: 10px; font-size: 14px; font-weight: 600;
+      border: 1px solid var(--primary); background: var(--primary); color: #fff;
+      cursor: pointer;
+    }
+    .phase-master-btn:disabled {
+      background: #f5f5f5; color: #999; border-color: var(--border); cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- 移动端顶部栏 -->
+  <div class="mobile-header">
+    <div class="brand">
+      <div class="brand-icon">香</div>
+      <div class="brand-text">
+        <h1 style="color:#fff;">香香子</h1>
+        <p style="color:rgba(255,255,255,0.7);">创作工作台</p>
+      </div>
+    </div>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+  </div>
+
+  <div class="layout">
+    <!-- 左侧导航 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">香</div>
+        <div class="brand-text">
+          <h1>香香子</h1>
+          <p>创作工作台</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="plan" onclick="showPage('plan')">
+          <span class="nav-icon">📋</span>
+          <span>每日计划</span>
+        </button>
+        <button class="nav-item" data-page="inspiration" onclick="showPage('inspiration')">
+          <span class="nav-icon">💡</span>
+          <span>选题每日灵感</span>
+        </button>
+        <button class="nav-item" data-page="trend" onclick="showPage('trend')">
+          <span class="nav-icon">🔥</span>
+          <span>爆款热点视频/二创</span>
+        </button>
+        <button class="nav-item" data-page="library" onclick="showPage('library')">
+          <span class="nav-icon">📥</span>
+          <span>热点素材库</span>
+        </button>
+        <button class="nav-item" data-page="review" onclick="showPage('review')">
+          <span class="nav-icon">📊</span>
+          <span>内容复盘</span>
+        </button>
+        <button class="nav-item" data-page="memo" onclick="showPage('memo')">
+          <span class="nav-icon">📝</span>
+          <span>备忘录</span>
+        </button>
+        <button class="nav-item" data-page="skilltree" onclick="showPage('skilltree')">
+          <span class="nav-icon">🎓</span>
+          <span>成长路线</span>
+        </button>
+      </nav>
+      <div class="sync-tip">
+        数据只存在本机浏览器，换设备不互通。
+      </div>
+    </aside>
+
+    <!-- 右侧主内容 -->
+    <main class="main">
+      <!-- ========== 每日计划 ========== -->
+      <section class="page active" id="page-plan">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date" id="planDate">2026年7月25日 星期六</div>
+            <div class="topbar-title">每日计划</div>
+          </div>
+          <button class="sync-btn" onclick="showSyncTip()">📱 安装到手机</button>
+        </div>
+
+        <!-- 数据概览 -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-value" id="statTotal">0</div>
+            <div class="stat-label">今日任务</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statDone">0</div>
+            <div class="stat-label">已完成</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statTodo">0</div>
+            <div class="stat-label">待完成</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statRate">0%</div>
+            <div class="stat-label">完成率</div>
+          </div>
+        </div>
+
+        <!-- TRAEWork 卡片看板 -->
+        <div class="board-grid">
+          <div class="board-card">
+            <div class="board-card-header">
+              <div class="board-card-title">🌱 个人日常</div>
+              <div class="board-count" id="dailyCount">0/3</div>
+            </div>
+            <div class="todo-list" id="dailyList"></div>
+            <div class="add-task">
+              <input type="text" id="dailyInput" placeholder="新增日常任务…" onkeydown="if(event.key==='Enter')addTask('daily')">
+              <button class="add-btn" onclick="addTask('daily')">+</button>
+            </div>
+          </div>
+
+          <div class="board-card yellow">
+            <div class="board-card-header">
+              <div class="board-card-title">✍️ 创作任务</div>
+              <div class="board-count" id="createCount">0/0</div>
+            </div>
+            <div class="todo-list" id="createList"></div>
+            <div class="add-task">
+              <input type="text" id="createInput" placeholder="新增创作任务…" onkeydown="if(event.key==='Enter')addTask('create')">
+              <button class="add-btn" onclick="addTask('create')">+</button>
+            </div>
+          </div>
+
+          <div class="board-card">
+            <div class="board-card-header">
+              <div class="board-card-title">🚀 运营例行</div>
+              <div class="board-count" id="opsCount">0/0</div>
+            </div>
+            <div class="todo-list" id="opsList"></div>
+            <div class="add-task">
+              <input type="text" id="opsInput" placeholder="新增运营任务…" onkeydown="if(event.key==='Enter')addTask('ops')">
+              <button class="add-btn" onclick="addTask('ops')">+</button>
+            </div>
+          </div>
+
+          <div class="board-card yellow">
+            <div class="board-card-header">
+              <div class="board-card-title">📌 临时/其他</div>
+              <div class="board-count" id="otherCount">0/0</div>
+            </div>
+            <div class="todo-list" id="otherList"></div>
+            <div class="add-task">
+              <input type="text" id="otherInput" placeholder="新增临时任务…" onkeydown="if(event.key==='Enter')addTask('other')">
+              <button class="add-btn" onclick="addTask('other')">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 选题每日灵感 ========== -->
+      <section class="page" id="page-inspiration">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date" id="inspDate">今日</div>
+            <div class="topbar-title">选题每日灵感</div>
+          </div>
+        </div>
+
+        <div class="insp-tabs">
+          <button class="insp-tab active" id="tabCopy" onclick="setInspMode('copy')">✨ 灵感文案</button>
+          <button class="insp-tab" id="tabTrend" onclick="setInspMode('trend')">🔥 今日最热选题</button>
+        </div>
+        <div class="inspiration-box">
+          <div class="inspiration-text" id="inspirationText">点击「换一批」获取今日灵感 ✨</div>
+          <div class="inspiration-actions">
+            <button class="btn btn-primary" onclick="nextInspiration()">🎲 换一批</button>
+            <button class="btn" onclick="saveInspiration()">⭐ 记这条灵感</button>
+            <button class="btn" onclick="openSearch('douyin', currentInspKw || currentInspiration)">▶ 看抖音相关视频</button>
+            <button class="btn" onclick="openSearch('bili', currentInspKw || currentInspiration)">📺 看B站相关视频</button>
+            <button class="btn" onclick="forwardCurrentInspiration()">🔗 转发文件传输助手</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🗂️ 我记录的灵感</div>
+          <div class="saved-list" id="savedInspirations">
+            <div class="saved-item" style="color:#999;">还没有记录灵感，上面点「记这条灵感」就会出现在这里。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 爆款热点视频/二创 ========== -->
+      <section class="page" id="page-trend">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date">每日自动更新</div>
+            <div class="topbar-title">爆款热点视频 / 二创</div>
+          </div>
+          <button class="sync-btn" onclick="refreshTrends()">🔄 刷新热点</button>
+        </div>
+
+        <!--DAILY_DOuyIN_START-->
+<div id="trendList"></div>
+<!--DAILY_DOuyIN_END-->
+        <!-- 热点素材收集箱已移至独立「热点素材库」页（page-library） -->
+        <div class="trend" style="border-left-color:var(--accent);">
+          <h3>⑥ 可直接改编选题库（照着拍就能用）</h3>
+          <p><b>1.</b>《我做自媒体半年阅读还是个位数，但我决定不删号也不认输》</p>
+          <p><b>2.</b>《一条口播塞5个点观众直接划走？普通人最容易踩的这个坑》</p>
+          <p><b>3.</b>《别熬大夜日更了：我用"2轻1深"节奏反而更稳》</p>
+          <p><b>4.</b>《换过5个方向放弃5次才懂：普通人最该戒的不是懒是急》</p>
+          <p><b>5.</b>《生活间隙里挤不出时间？看看一边上班一边慢慢做的普通人》</p>
+          <p style="color:var(--text-sec);font-size:13px;">以上均落点「宝妈做自媒体 = 女性成长 + 自媒体」，真人出镜口播即可，与今日热点素材库新增不重复。</p>
+        </div>
+        <div class="trend" style="border-left-color:#c0392b;">
+          <h3>⚠️ 避坑提醒（宝妈做自媒体专用）</h3>
+          <p><b>1. 视角锚定：</b>内容从「宝妈做自媒体」真实视角切入，讲自己的实战经历，不写泛泛的育儿/情感道理，落点回到创作者视角。</p>
+          <p><b>2. 不滑向情感赛道：</b>只落在「自媒体人的成长与方法论」，不写婚恋劝离劝和、不写纯情感关系，不发「边界感」「喜欢比爱」类偏情感内容。</p>
+          <p><b>3. 落点必扣自媒体：</b>每条口播结尾回到「做自媒体的创作者视角」，不能写成纯情感/纯成长文。</p>
+          <p><b>4. 数据动作：</b>已发作品正常留着、别频繁改删，仅把与人设严重不符的旧内容隐藏；日更不如磨单条，结尾引导关注。</p>
+        </div>
+      </section>
+
+      <!-- ========== 热点素材库（独立页·与当天热点分开） ========== -->
+      <section class="page" id="page-library">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date">随时翻·永久留·不跟当天热点混</div>
+            <div class="topbar-title">📥 热点素材库</div>
+          </div>
+        </div>
+        <div class="trend" style="border-left-color:#2e8b57;">
+          <h3>📥 我的热点素材库 <span style="font-size:13px;color:var(--text-sec);font-weight:normal;">（永久留存·跟当天热点分开·不进知识库痛点卡）</span></h3>
+          <p style="font-size:13px;color:var(--text-sec);">这里存的是<b>全部</b>热点素材，跟「爆款热点视频/二创」页的当天轮播是分开的，不会看着像重复。今天没拍的、明天还在；以后往里加的新热点，没拍的也自动进来。每条下面都能「📋复制搜索词 / 🔍抖音搜一下」直接找参考视频。只收新人向自媒体内容（普通人/宝妈做自媒体、痛点/用户需求类、新手能二创的爆款），不凑无关、不收资深讲课类。</p>
+          <div id="hotBox"></div>
+        </div>
+      </section>
+
+      <!-- ========== 内容复盘 ========== -->
+      <section class="page" id="page-review">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date">发完内容就记一笔</div>
+            <div class="topbar-title">内容复盘</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">📝 新增复盘</div>
+          <form class="review-form" onsubmit="event.preventDefault(); addReview();">
+            <label>内容标题 / 主题</label>
+            <input type="text" id="revTitle" placeholder="例如：当妈后我只属于自己的 30 分钟">
+            <label>发布平台</label>
+            <input type="text" id="revPlatform" placeholder="公众号 / 视频号 / 小红书">
+            <label>数据表现（播放量/阅读量/点赞/评论）</label>
+            <input type="text" id="revData" placeholder="例如：视频号 1200 播放，37 赞，5 评论">
+            <label>哪里做得好？</label>
+            <textarea id="revGood" placeholder="例如：前 3 秒用了冲突画面，留人效果不错"></textarea>
+            <label>哪里可以优化？</label>
+            <textarea id="revBad" placeholder="例如：结尾没有引导关注，互动率低"></textarea>
+            <label>下次怎么做？</label>
+            <textarea id="revNext" placeholder="例如：下次结尾加一句'你也经历过吗？评论区告诉我'"></textarea>
+            <button type="submit" class="add-btn" style="margin-top:14px;width:100%;">保存复盘</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-title">📚 历史复盘</div>
+          <div class="review-list" id="reviewList">
+            <div style="color:#999;font-size:14px;">还没有复盘记录，发完内容回来填一条。</div>
+          </div>
+        </div>
+
+        <div class="card" style="border-left:4px solid var(--primary);">
+          <div class="card-title">📊 抖音数据规律（2026-07-19~26 复盘结论）</div>
+          <div style="font-size:13px;color:var(--text-sec);margin-bottom:12px;">按姜胡说复盘六步法 + 复盘三问框架整理（数据来源：香香子抖音后台真实数据）。写每条抖音前先对照。</div>
+
+          <div style="font-weight:600;margin:10px 0 6px;">一、数据三层（实测）</div>
+          <p>· <b>高播放 1000+</b>：标题带「宝妈做自媒体 / 自媒体新人 / 口播视频第X天」锚点。最高：7-22「宝妈做自媒体拍口播视频第八天 报喜了」5610 播放 / 379 赞 / 98 评论。</p>
+          <p>· <b>中上 1700-2650</b>：痛点 / 认知类带自媒体锚点，如「自媒体新人不要纠结赞多赞少」1769 播 / 216 赞 / 198 评论（互动率极高）、「先完成再完美」2463。</p>
+          <p>· <b>低播放 129-235</b>：泛情感 / 觉醒鸡汤无自媒体锚点，如「宝妈觉醒 一切向内求」129、「全职宝妈 不甘平庸」235。</p>
+
+          <div style="font-weight:600;margin:12px 0 6px;">二、关键结论</div>
+          <p>已验证铁律③（自媒体人视角）：锚定「宝妈做自媒体」身份 + 真实过程感 / 痛点 → 播放好；一旦滑向泛情感鸡汤 → 数据断崖。跟内容是否「深刻」无关。</p>
+
+          <div style="font-weight:600;margin:12px 0 6px;">三、行动清单（写稿前对照）</div>
+          <p>1. 隐藏低数据泛情感两条（每天 2-3 条清，别一天全干）。</p>
+          <p>2. 优化置顶：保留「第八天成绩」，加「数据差不放弃」或「新人别纠结赞多赞少」，再加「先完成再完美」。</p>
+          <p>3. 标题公式：宝妈做自媒体 / 自媒体新人 + 痛点 / 认知 / 第X天。</p>
+          <p>4. 抖音权重健康，近期重点发力，日更 1 条；视频号同步发已验证爆款。</p>
+          <p>5. 反面案例：7-26「做自媒体到底该信谁？」仅 46 播——标题平问句、缺强情绪 / 利益点 / 第X天过程感、封面利益点弱、未用已验证爆款结构。</p>
+
+          <div style="font-weight:600;margin:12px 0 6px;">四、提醒</div>
+          <p>此规律是「宝妈做自媒体」身份锚点下的数据，不是泛成长号规律。每条抖音写前先问：标题里有没有「宝妈做自媒体 / 第X天」这类锚点？</p>
+        </div>
+      </section>
+
+      <!-- ========== 备忘录 ========== -->
+      <section class="page" id="page-memo">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date">随手记</div>
+            <div class="topbar-title">备忘录</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">📝 随时记下的想法</div>
+          <textarea class="memo-area" id="memoArea" placeholder="想法、待办、账号密码提示、合作信息…都可以写在这里。&#10;&#10;数据只存在你本机浏览器。"></textarea>
+          <div class="sync-tip">已自动保存。</div>
+        </div>
+      </section>
+
+      <!-- ========== 自媒体成长路线（分阶段技能树） ========== -->
+      <section class="page" id="page-skilltree">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date">按阶段慢慢走，不焦虑</div>
+            <div class="topbar-title">🎓 自媒体成长路线</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:14px;">
+          <div class="skill-progress">
+            <div class="skill-progress-header">
+              <span>总进度</span>
+              <span id="skillProgressText">已掌握 0/5 阶段</span>
+            </div>
+            <div class="skill-progress-track">
+              <div class="skill-progress-fill" id="skillProgressFill" style="width:0%"></div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--text-sec);margin:10px 0 0;">
+            每个阶段点开后有「目标、过关标准、可勾选小步骤」。每步都配了 B站/抖音 搜索词，找不到对应视频就点搜索。前一阶段标记掌握后，下一阶段自动解锁。
+          </p>
+        </div>
+
+        <div id="skillTreeList"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>const trends = [
+
+  { kw:'认知觉醒 信息差 普通人 被收割 焦虑营销 自媒体', title:'① 认知觉醒第一步：看清你在为谁的焦虑买单（2026 认知型）', meta:'认知型博主的核心活儿——帮普通人看清信息差。很多人做自媒体这半年，被"速成""月入过万"的焦虑营销推着走，买课、换方向、自我怀疑，其实焦虑是别人故意制造出来卖你解药的。看透这一层，就省下大把冤枉钱和情绪。', tags:['认知觉醒','信息差'], why:'你这半年大概率也被这类焦虑推着绕过弯路。这条让你把"被收割的焦虑"讲成认知觉醒的内容，比教运营技巧更有辨识度、也更戳人。', tip:'拍"我做自媒体半年才看懂：我焦虑的很多东西，是别人故意让我焦虑的"，用你真实心态当案例，落到"普通人怎么不被割"。' },
+
+  { kw:'复利思维 长期主义 自媒体 积累 普通人 2026', title:'② 复利曲线：为什么普通人做自媒体前半年都在"假装没进展"（2026 思维模型）', meta:'复利不是鸡汤，是一条真实曲线：前期投入看不到回报，熬过拐点才加速。很多宝妈做两三个月没起色就放弃，恰恰倒在了拐点前。把"复利"讲清楚，是认知型博主最值钱的内容之一。', tags:['思维模型','复利'], why:'你一千多粉、半年多还没爆款，正是复利曲线的"平台期"——这条把你的真实状态讲成思维模型，治一治想放弃的冲动，也立住你"懂认知"的人设。', tip:'拍"我做自媒体半年还是几百粉，但我看懂了一条曲线就不慌了"，讲复利曲线，用你每条都是积累的真实感受收尾。' },
+
+  { kw:'反脆弱 允许犯错 不完美 普通人 自媒体 2026', title:'③ 反脆弱：为什么"怕拍废"才是你更新慢的真原因（2026 思维模型）', meta:'反脆弱不是硬扛，是让错误变成养料。普通人做自媒体最爱犯的错，是等"准备好了"才发，结果永远在准备。允许自己拍废、发丑，系统反而越挫越强。', tags:['思维模型','反脆弱'], why:'你卡在"一条塞太多点""反复改文案"的完美主义里吧？这条把完美主义拆成认知问题，给同阶段人一个能立刻照做的松绑动作。', tip:'拍"我以前非要改到完美才敢发，后来一条拍废的反而救了我"，讲反脆弱——先发出来再说，比憋完美重要十倍。' },
+
+  { kw:'自我接纳 允许自己慢 宝妈 做自媒体 2026', title:'④ 自我接纳：在一地鸡毛里，允许自己"慢一点"（2026 内在成长）', meta:'宝妈做自媒体最大的内耗，是拿别人的节奏要求自己。自我接纳不是躺平，是承认"我现在就是碎片时间、就是慢"，然后在这个前提下找能跑通的最小动作。', tags:['内在成长','自我接纳'], why:'你时间碎片化最严重，这条直接给解药："慢"不是你的问题，是现实。把自我接纳讲成可落地的节奏，同阶段宝妈秒共情。', tip:'拍"一地鸡毛里没整块时间做自媒体？我学会了允许自己慢"，讲你碎片时间里的真实打法，不跟别人的日更比。' },
+
+  { kw:'内核稳定 不被数据绑架 做自媒体 普通人 2026', title:'⑤ 内核稳定：别让一个播放量好坏，决定你今天的心情（2026 内在成长）', meta:'普通人做自媒体最容易被后台数据牵着走，播放一跌就自我怀疑。内核稳定的人把创作当练习，数据只是反馈不是审判。本事长在身上，谁拿不走。', tags:['内在成长','内核稳定'], why:'你半夜也对着后台发呆吧？这条把"数据焦虑"从心态问题升维成"内核稳定"的认知课题，比纯安慰有深度，也更符合认知型定位。', tip:'拍"凌晨两点我盯着后台数据发了好久的呆，后来想通一件事"，讲你把创作当练习、数据当反馈的转念。' },
+
+  { kw:'女性独立意识 不依附 宝妈 自媒体 2026', title:'⑥ 女性独立意识：做自媒体，是普通妈妈在这个时代最大的红利（2026 女性成长）', meta:'认知型女性成长不是喊口号，是讲清"经济独立、精神独立"的底层逻辑。宝妈做自媒体，表面上涨粉，实质是把自己从"手心朝上"里一点点拽出来。', tags:['女性成长','独立意识'], why:'你签名就是"在一地鸡毛里重新养自己"，这条把"重新养自己"讲成女性独立的认知框架，和你的人设严丝合缝，也踩中2026女性成长赛道红利。', tip:'拍"我做自媒体不是为了当网红，是为了先为自己活"，用你从手心朝上到一点点独立的真实感悟当素材。' },
+
+  { kw:'向内求 重新养自己 全职妈妈 自媒体 2026', title:'⑦ 向内求：做自媒体半年，最大的收获不是涨粉是找回自己（2026 认知觉醒）', meta:'很多人向外求流量、求认可，越求越空。向内求的人把自媒体当一面镜子，照见自己卡在哪、卡了多久。重新养自己，是先养心力再养账号。', tags:['认知觉醒','向内求'], why:'你正经历"在一地鸡毛里重新养自己"，这条把你的签名变成可拍的认知系列——向内求比向外求更长久，落点女性成长乘自媒体。', tip:'拍"我做自媒体半年，最大的收获不是涨粉是找回了自己"，讲你在一地鸡毛里挤时间做内容的真实心态，不提具体爆了多少。' },
+
+  { kw:'微习惯 降低启动成本 普通人 自媒体 2026', title:'⑧ 微习惯：不想拍的时候，只做"打开提词器"这一件小事（2026 行动习惯）', meta:'认知型行动法——降低启动成本。大目标让人拖延，微习惯让人动起来。不想拍整条？先打开提词器念一句，往往念着念着就拍了。', tags:['行动习惯','微习惯'], why:'你时间碎、精力散，这条直接给能落地的"最小启动动作"，比喊"坚持"有用。也顺带展示你真实的低能量日子怎么破局。', tip:'拍"不想拍视频的那天，我只做这一件小事就续上了"，讲微习惯怎么帮你断更不断气，落到宝妈的碎片日常。' },
+
+  { kw:'第一性原理 回归本质 自媒体 普通人 2026', title:'⑨ 第一性原理：别学套路了，先问"观众到底为什么看你"（2026 思维模型）', meta:'第一性原理是剥掉一切"应该这样"的成见，回到最底层的问号。做自媒体别急着抄爆款结构，先想清楚：你凭什么被记住？你解决了谁的什么真问题？', tags:['思维模型','第一性原理'], why:'你之前藏无关视频、钉死人群，其实已经在用第一性原理——回到"我是谁、给谁看、提供什么"。把这套思考讲出来，比教定位公式更有认知味。', tip:'拍"新手做自媒体别先学套路，先问自己一个问题"，用你钉死人群的真实动作当案例，讲第一性原理怎么用。' },
+
+  { kw:'放弃流量执念 不盲目攀比 普通人 自媒体 2026', title:'⑩ 放弃流量执念：你"决定放弃"的其实是这三件事（2026 认知觉醒）', meta:'放弃不是停更，是放弃拖垮自己的三样东西：对流量的执念、对完美的苛求、对别人的盲目攀比。在自己的节奏里慢慢长，才是普通人的正解。', tags:['认知觉醒','慢节奏'], why:'你一千多粉没爆款，正是练"放弃执念"的好时机。这条把焦虑拆成三个能立刻照做的动作，同阶段宝妈秒共情，也立住你稳得住的人设。', tip:'拍"我做自媒体好几个月还是几百粉，但我决定放弃这三件事"，讲放弃流量执念、放弃完美主义、放弃盲目攀比，不提具体爆了多少。' },
+
+  { kw:'二八法则 精力管理 普通人 自媒体 2026', title:'⑪ 二八法则：把你十分的精力，花在那一两件真正长本事的事上（2026 思维模型）', meta:'二八法则在自媒体里：两成动作决定八成结果。找对标、拆结构、练口播是那两成；纠结封面配色、逐帧调转场是那八成。精力有限，先保命动作。', tags:['思维模型','二八法则'], why:'你时间最贵，这条教你把精力从"假忙"里抽出来，落到真正长本事的事。认知型博主讲精力管理，比讲时间管理更高级。', tip:'拍"我做自媒体后才懂：十分力气别平分，先砸这两件事"，讲你怎么用二八法则安排碎片时间，不凑日更数量。' },
+
+  { kw:'爱自己 不完美主义 宝妈 做自媒体 2026', title:'⑫ 爱自己：真实的生活本就不完美，别为一张图反复修到凌晨（2026 内在成长）', meta:'不完美主义是爱自己的一种表现。很多宝妈为了"看起来精致"熬夜修图改文案，消耗的是最该留给自己的心力。敢发真实的丑，反而更圈粉。', tags:['内在成长','爱自己'], why:'你也有为哪句文案不满意反复改的夜晚吧？这条把"爱自己"讲成具体的创作动作——敢发不完美，给同阶段人松绑也立人设。', tip:'拍"我以前为一张图修到凌晨，后来想通爱自己比精致重要"，讲你放过多稿不完美的真实经历。' },
+
+  { kw:'认知博主 观点转述 四段式 结合自身故事 口播 2026', title:'⑬ 认知口播四段式：看到一句戳心的话，讲成自己的故事就出片（2026 方法）', meta:'认知博主低门槛：刷到一句好观点，用四段式讲——黄金钩子开头、规范引入外部观点并标来源、结合自身经历升华、结尾互动。七成内容为自己经历与思考，属合理使用不判搬运。', tags:['认知口播','观点转述'], why:'你正愁今天讲什么——这条给你一个稳的产出法：刷到认知类好观点，标来源加讲你自己的故事，既蹭热点又不抄、还能持续出片。', tip:'拍"看到一句戳中我的话，我把它讲成自己的故事"，演示四段式：钩子、今天看某某说、你的真实经历、互动问。注意标来源、不照搬原句。' },
+
+  { kw:'自媒体 当案例 讲认知 真实经历 普通人 2026', title:'⑭ 把自媒体当素材：你踩的每一个坑，都是一篇认知觉醒的内容（2026 方法）', meta:'认知型博主不脱离生活，而是把日常经历当认知案例。做自媒体遇到的焦虑、攀比、想放弃，本身就是讲"认知觉醒"最好的真实剧本，比空讲概念可信十倍。', tags:['自媒体案例','认知素材'], why:'你半年的真实经历就是金矿。这条教你怎么把"做自媒体的糟心事"翻译成认知内容，既持续有料又不脱离你的赛道。', tip:'拍"我做自媒体踩的坑，后来都成了我最有用的内容"，挑一个真实坑（比如乱换方向）讲背后的认知偏差。' },
+
+  { kw:'注意力经济 平台规则 认知 普通人 自媒体 2026', title:'⑮ 看清规则：平台卖的不是内容，是大家的注意力（2026 认知觉醒）', meta:'理解"注意力经济"这一层，你就明白为什么标题要勾人、为什么真实松弛的内容被倾斜——平台要留住人。看懂规则不叫投机，叫在牌桌上别当傻子。', tags:['认知觉醒','平台规则'], why:'你总纠结"为什么我认真写却没人看"，这条从认知层面解：不是你不行，是没看懂注意力这场游戏。讲清了反而更从容。', tip:'拍"我做自媒体后才看懂平台在卖什么"，用大白话讲注意力经济，不碰完播率等术语，落到"真实松弛内容更吃香"。' },
+
+  { kw:'成本思维 时间精力 普通人 自媒体 2026', title:'⑯ 成本思维：你最贵的不是钱，是挤出来的那点精力（2026 思维模型）', meta:'成本思维让人算清账：买课花的是钱，熬夜学花的是精力，而宝妈最缺的就是精力。把精力花在能复利的事上，别花在"看起来努力"的事上。', tags:['思维模型','成本思维'], why:'你碎片时间最贵，这条把"精力成本"讲透，帮同阶段人戒掉伪勤奋。认知型博主讲成本，比讲"努力"高级且真实。', tip:'拍"宝妈做自媒体最贵的不是钱是精力，我这样算这笔账"，讲你怎么把有限精力砸在复利动作上。' },
+
+  { kw:'边界感 不讨好所有人 做自媒体 普通人 2026', title:'⑰ 边界感：想让所有人都喜欢你，结果谁都留不住（2026 内在成长）', meta:'边界感是认知型博主的必备内核。内容越想讨好所有人越没记忆点，敢亮观点、敢不讨好转发低的人，反而聚起同频的一群。', tags:['内在成长','边界感'], why:'你铁律里就强调"强观点别写正确的废话"，这条把边界感从做人讲到做号，严丝合缝。立人设就要敢不被所有人喜欢。', tip:'拍"我做自媒体越想让所有人喜欢，反而越没人记得我"，讲边界感怎么帮你立住人设、聚同频粉。' },
+
+  { kw:'对抗拖延 5分钟法则 普通人 自媒体 2026', title:'⑱ 对抗拖延：跟自己说"只做5分钟"，往往就做完了（2026 行动习惯）', meta:'拖延的本质是启动恐惧。5分钟法则：告诉自己只做5分钟，不行就停。多数时候一动起来就停不下来。认知上把"大任务"拆成"不值得怕的小事"。', tags:['行动习惯','对抗拖延'], why:'你不想拍的那天最多，这条给一个零压力的启动法，正好接微习惯那条。落点宝妈碎片日常里的真实破局。', tip:'拍"不想拍视频就对自己说只做5分钟，我靠这招续了半年"，讲5分钟法则怎么破拖延。' },
+
+  { kw:'宝妈 自我重建 经济独立 精神独立 2026', title:'⑲ 宝妈自我重建：先有精神独立，才有底气不依附（2026 女性成长）', meta:'自我重建分两步：精神独立（知道自己要什么）在前，经济独立（能自己挣）在后。很多宝妈卡在"我除了带娃还会啥"的自我怀疑里，自媒体恰恰是重建的起点。', tags:['女性成长','自我重建'], why:'你正从"全职宝妈"往"独立创作者"走，这条把你的旅程讲成女性自我重建的认知路径，戳中同阶段宝妈最深的渴望。', tip:'拍"我从只会带娃到敢对自己说我能行，自媒体是我的起点"，讲精神独立先于经济独立的真实体会。' },
+
+  { kw:'重新开始的能力 归零 普通人 自媒体 2026', title:'⑳ 归零力：敢不敢把"已过气"的自己，重新养一遍（2026 认知觉醒）', meta:'归零不是认输，是主动清空旧认知重新开始的能力。三十多岁、二胎、零基础，这些在别人眼里的"晚了"，恰恰是你重新养自己的最好时机。', tags:['认知觉醒','归零力'], why:'你35岁二胎从零做自媒体，这条把"晚"重新定义成优势——有阅历才讲得透认知。直接服务你"重新养自己"的人设。', tip:'拍"35岁二胎从零开始，我反而觉得刚刚好"，讲归零力，用你真实起点当案例，落点认知觉醒。' },
+
+  { kw:'长期主义 速成幻觉 普通人 自媒体 2026', title:'㉑ 长期主义：速成是幻觉，慢才是普通人的真捷径（2026 思维模型）', meta:'市面上"7天起号""月入过万"是速成幻觉，专割焦虑的人。真正的长期主义是把每天的小动作当存款，时间替你滚雪球。慢不是笨，是绕开了所有坑。', tags:['思维模型','长期主义'], why:'你被速成话术推着绕过路吧？这条把"慢就是快"讲成思维模型，治焦虑也立住你清醒的人设，比跟风喊口号有辨识度。', tip:'拍"我信过7天起号的鬼话，后来才懂慢才是普通人的捷径"，讲速成幻觉怎么坑人、长期主义怎么救你。' },
+
+  { kw:'成长型思维 我不行 我还在学 普通人 自媒体 2026', title:'㉒ 把"我不行"换成"我还在学"：一句话改写你的底层剧本（2026 内在成长）', meta:'成长型思维的核心，是把"能力固定"的剧本改成"能力可长"。一句"我还在学"替代"我不行"，大脑就从防御变开放，行动力自然回来。', tags:['内在成长','成长型思维'], why:'你深夜怀疑"我不适合做这个"的时候，这条直接给一句能替换的内心台词。认知型博主讲思维转换，最贴你"重新养自己"的主线。', tip:'拍"我把口头禅从我不行改成我还在学，生活真的变了"，讲成长型思维怎么帮你熬过冷启动。' }
+
+];
+</script>
+  <script>
+    // ========== 页面切换 ==========
+    function showPage(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      document.querySelector('.nav-item[data-page="' + page + '"]').classList.add('active');
+      localStorage.setItem('xxz_last_page', page);
+      if (window.innerWidth <= 768) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    // 恢复上次页面
+    const lastPage = localStorage.getItem('xxz_last_page') || 'plan';
+    if (lastPage !== 'plan') showPage(lastPage);
+
+    // ========== 日期 ==========
+    const weekdays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    const now = new Date();
+    const dateStr = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 ${weekdays[now.getDay()]}`;
+    document.getElementById('planDate').textContent = dateStr;
+    document.getElementById('inspDate').textContent = dateStr;
+
+    // ========== 每日计划数据与渲染 ==========
+    const defaultTasks = {
+      daily: [],
+      create: [
+        { id: 'c1', text: '趁热打铁三连击：看爆款 + 拆结构 + 记灵感', done: false, tag: '创作' }
+      ],
+      ops: [
+        { id: 'o1', text: '回复公众号/视频号评论', done: false, tag: '运营' },
+        { id: 'o2', text: '查看昨日数据，记一条复盘', done: false, tag: '运营' }
+      ],
+      other: []
+    };
+
+    function loadTasks() {
+      const saved = localStorage.getItem('xxz_tasks');
+      let data;
+      if (!saved) {
+        data = JSON.parse(JSON.stringify(defaultTasks));
+      } else {
+        try {
+          data = JSON.parse(saved);
+          // 迁移清理：移除早期误带入的「胡楚靓日课」（普拉提/小提琴/英语，id=d1/d2/d3）
+          if (data.daily && Array.isArray(data.daily)) {
+            data.daily = data.daily.filter(t => !['d1','d2','d3'].includes(t.id));
+          }
+        } catch (e) { data = JSON.parse(JSON.stringify(defaultTasks)); }
+      }
+      // 每日重置：新的一天清空勾选状态（任务清单保留），让每日计划真正"每日更新"
+      if (localStorage.getItem('xxz_tasks_date') !== dateStr) {
+        ['daily','create','ops','other'].forEach(type => {
+          (data[type] || []).forEach(t => { if (t && 'done' in t) t.done = false; });
+        });
+        localStorage.setItem('xxz_tasks_date', dateStr);
+        localStorage.setItem('xxz_tasks', JSON.stringify(data));
+      }
+      return data;
+    }
+    let tasks = loadTasks();
+
+    function saveTasks() {
+      localStorage.setItem('xxz_tasks', JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      ['daily','create','ops','other'].forEach(type => {
+        const list = document.getElementById(type + 'List');
+        const arr = tasks[type] || [];
+        list.innerHTML = '';
+        arr.forEach(t => {
+          const item = document.createElement('div');
+          item.className = 'todo-item' + (t.done ? ' done' : '');
+          item.innerHTML = `
+            <input type="checkbox" class="todo-check" ${t.done ? 'checked' : ''} onchange="toggleTask('${type}', '${t.id}')">
+            <span class="todo-text">${escapeHtml(t.text)}</span>
+            ${t.tag ? `<span class="todo-tag">${escapeHtml(t.tag)}</span>` : ''}
+            <button class="todo-del" onclick="deleteTask('${type}', '${t.id}')">×</button>
+          `;
+          list.appendChild(item);
+        });
+        if (arr.length === 0) {
+          list.innerHTML = '<div style="color:#999;font-size:13px;padding:8px 0;">暂无任务，下方可新增</div>';
+        }
+        const done = arr.filter(t => t.done).length;
+        document.getElementById(type + 'Count').textContent = `${done}/${arr.length}`;
+      });
+      updateStats();
+    }
+
+    function updateStats() {
+      const all = Object.values(tasks).flat();
+      const total = all.length;
+      const done = all.filter(t => t.done).length;
+      const todo = total - done;
+      const rate = total ? Math.round(done / total * 100) : 0;
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statDone').textContent = done;
+      document.getElementById('statTodo').textContent = todo;
+      document.getElementById('statRate').textContent = rate + '%';
+    }
+
+    function toggleTask(type, id) {
+      const t = tasks[type].find(x => x.id === id);
+      if (t) { t.done = !t.done; saveTasks(); renderTasks(); }
+    }
+    function deleteTask(type, id) {
+      tasks[type] = tasks[type].filter(x => x.id !== id);
+      saveTasks(); renderTasks();
+    }
+    function addTask(type) {
+      const input = document.getElementById(type + 'Input');
+      const text = input.value.trim();
+      if (!text) return;
+      const tagMap = { daily: '日常', create: '创作', ops: '运营', other: '其他' };
+      // 简单提取标签：如果文本含「：」前面当标签
+      let tag = tagMap[type];
+      let taskText = text;
+      if (text.includes('：') || text.includes(':')) {
+        const parts = text.split(/[：:]/);
+        if (parts[0].length <= 6) { tag = parts[0].trim(); taskText = parts.slice(1).join('：').trim(); }
+      }
+      tasks[type].push({ id: type + Date.now(), text: taskText, done: false, tag });
+      input.value = '';
+      saveTasks(); renderTasks();
+    }
+    function escapeHtml(s) {
+      return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    }
+
+    // ========== 灵感 ==========
+    const inspirations = [
+      "普通人做自媒体，最先该升级的不是技术，是认知：想清楚你到底在为什么焦虑。",
+      "别再被月入过万的标题牵着走，先问自己——这条内容对我自己的认知有长进吗？",
+      "拍一条我做自媒体半年才看懂：我焦虑的很多东西，是别人故意让我焦虑的。",
+      "复利不是鸡汤：你今天发的每一条，都是在给半年后的自己存本金。",
+      "试试反脆弱视角：拍废一条不可怕，可怕的是因为怕拍废而永远不开始。",
+      "一条我允许自己慢的视频，可能比十条干货更让同阶段宝妈记住你。",
+      "内核稳定怎么练？从播放跌了就怀疑人生改成数据只是反馈不是审判。",
+      "女性独立不是口号：做自媒体，是普通妈妈把手心朝上一点点拽回来的过程。",
+      "向内求比向外求长久：做自媒体先养心力，再养账号。",
+      "微习惯破局：不想拍整条？今天只做打开提词器念一句这一件小事。",
+      "第一性原理问自己：观众凭什么记住我？我解决了谁的什么真问题？",
+      "放弃三件事的视频选题：对流量的执念、对完美的苛求、对别人的攀比。",
+      "二八法则用在精力上：十分力气别平分，先砸那两件真正长本事的事。",
+      "爱自己从敢发不完美开始：真实的生活本就不精致，别修到凌晨。",
+      "看到一句戳心的认知观点，标来源、讲成自己的故事，就是一条认知口播。",
+      "你踩的每个坑，都是一篇认知觉醒的内容：把糟心事翻译成认知偏差。",
+      "看清注意力经济：平台卖的是大家的注意力，真实松弛的内容才被倾斜。",
+      "成本思维算笔账：宝妈最贵的不是钱，是挤出来的那点精力，别花在假忙上。",
+      "边界感立人设：想让所有人喜欢你，结果谁都留不住；敢亮观点反而聚同频。",
+      "拖延是启动恐惧：跟自己说只做5分钟，往往就做完了。",
+      "宝妈自我重建两步：精神独立在前，经济独立在后，自媒体是起点。",
+      "归零力：35岁二胎从零开始，不是晚了，是刚好有阅历讲透认知。",
+      "速成是幻觉，慢才是普通人的真捷径：把每天小动作当存款。",
+      "把我不行换成我还在学，一句话改写底层剧本，行动力就回来。",
+      "认知觉醒第一条：你不是不够努力，是努力的方向没经过自己脑子筛选。",
+      "拍我做自媒体越想让所有人喜欢，反而越没人记得我，讲边界感怎么立人设。",
+      "长期主义不是熬，是每天做一件未来会感谢现在的小事。",
+      "普通人最大的认知陷阱：拿别人的节奏要求自己的一地鸡毛。",
+      "试着把一条正确的废话换成扎心的真话，完播和转发天差地别。",
+      "做自媒体别只输出内容，要输出人设：用户关注你是因为认同你的认知。",
+      "复盘别只看数：问自己这条让我和观众的认知都往前走了一步吗。",
+      "认知型博主怎么持续有料？把日常每一件糟心事当认知案例拆。",
+      "允许自己今天只发一条短的：完成比完美重要，断更比丑更伤。",
+      "女性成长别飘：落到我在一地鸡毛里重新养自己的真实感悟才戳人。",
+      "思维模型这样讲不枯燥：先抛一个大家以为对的，再反过来讲你的经历。",
+      "拍我不是在教你成功，是在陪你一起想明白，认知博主人设就稳了。",
+      "别贪多：一条视频只讲透一个认知点，比塞五个观点记得住。",
+      "普通人做自媒体的底气，来自我也在学的真诚，不是我都懂的装。",
+      "把为什么没人看换成我这条解决了谁的具体困惑，视角一转焦虑就散。",
+      "认知型成长博主的尽头：不是粉丝多少，是你自己真的想明白了、活通透了。"
+    ];
+    let currentInspiration = '';
+    let currentInspKw = '';
+    let currentInspTrend = null;
+    let inspMode = 'copy';
+    let inspStep = 0;
+    let inspTrendStep = 0;
+    const INSP_DAY = Math.floor(Date.now() / 86400000);
+    function setInspMode(mode) {
+      inspMode = mode;
+      document.getElementById('tabCopy').classList.toggle('active', mode === 'copy');
+      document.getElementById('tabTrend').classList.toggle('active', mode === 'trend');
+      inspStep = 0; inspTrendStep = 0;
+      nextInspiration();
+    }
+    function nextInspiration() {
+      if (inspMode === 'trend') {
+        const n = trends.length;
+        const t = trends[(INSP_DAY + inspTrendStep) % n];
+        inspTrendStep++;
+        currentInspiration = t.title;
+        currentInspKw = t.kw;
+        currentInspTrend = t;
+        document.getElementById('inspirationText').innerHTML =
+          '<b>' + escapeHtml(t.title) + '</b><br><br>'
+          + '<span style="font-size:14px;color:var(--text-sec);"><b>为什么适合你：</b>' + escapeHtml(t.why) + '</span><br><br>'
+          + '<span style="font-size:14px;color:var(--text-sec);"><b>口播二创建议：</b>' + escapeHtml(t.tip) + '</span>';
+      } else {
+        const idx = (INSP_DAY + inspStep) % inspirations.length;
+        currentInspiration = inspirations[idx];
+        currentInspKw = '';
+        currentInspTrend = null;
+        inspStep++;
+        document.getElementById('inspirationText').textContent = currentInspiration;
+      }
+    }
+    nextInspiration();
+
+    function loadSavedInspirations() {
+      const saved = JSON.parse(localStorage.getItem('xxz_inspirations') || '[]');
+      const box = document.getElementById('savedInspirations');
+      box.innerHTML = '';
+      if (saved.length === 0) {
+        box.innerHTML = '<div class="saved-item" style="color:#999;">还没有记录灵感，上面点「记这条灵感」就会出现在这里。</div>';
+        return;
+      }
+      saved.slice().reverse().forEach((text, idx) => {
+        const item = document.createElement('div');
+        item.className = 'saved-item';
+        item.innerHTML = `<span class="saved-text">${escapeHtml(text)}</span><button class="todo-del" onclick="deleteInspiration(${saved.length - 1 - idx})">×</button>`;
+        box.appendChild(item);
+      });
+    }
+    function saveInspiration() {
+      if (!currentInspiration) return;
+      const saved = JSON.parse(localStorage.getItem('xxz_inspirations') || '[]');
+      saved.push(currentInspiration);
+      localStorage.setItem('xxz_inspirations', JSON.stringify(saved));
+      loadSavedInspirations();
+      alert('已记录 ✓');
+    }
+    function deleteInspiration(idx) {
+      const saved = JSON.parse(localStorage.getItem('xxz_inspirations') || '[]');
+      saved.splice(idx, 1);
+      localStorage.setItem('xxz_inspirations', JSON.stringify(saved));
+      loadSavedInspirations();
+    }
+    loadSavedInspirations();
+
+    // ========== 复盘 ==========
+    // 已有复盘种子（AI维护，localStorage为空时显示；用户开始填后以其数据为主）
+    const SEED_REVIEWS = [
+      { title:'0727三视频复盘（守住边界+抖音两条）', platform:'视频号+抖音',
+        data:'视频号《守住边界》440播放0评论；抖音两条550/598播放',
+        good:'守边界旧情感方向最后一次，确认不复制',
+        bad:'完播率仅3~6%（健康≥25%）是死穴；守住边界0评论实锤内容未锚定自媒体；评论高但吸粉低=缺关注钩子',
+        next:'开头强钩子拉停留；结尾加关注钩子；所有内容锚定“宝妈做自媒体”',
+        date:'2026-07-27' }
+    ];
+
+    function addReview() {
+      const title = document.getElementById('revTitle').value.trim();
+      const platform = document.getElementById('revPlatform').value.trim();
+      const data = document.getElementById('revData').value.trim();
+      const good = document.getElementById('revGood').value.trim();
+      const bad = document.getElementById('revBad').value.trim();
+      const next = document.getElementById('revNext').value.trim();
+      if (!title) { alert('先写个标题/主题吧'); return; }
+      const reviews = JSON.parse(localStorage.getItem('xxz_reviews') || '[]');
+      reviews.push({ title, platform, data, good, bad, next, date: dateStr });
+      localStorage.setItem('xxz_reviews', JSON.stringify(reviews));
+      document.getElementById('revTitle').value = '';
+      document.getElementById('revPlatform').value = '';
+      document.getElementById('revData').value = '';
+      document.getElementById('revGood').value = '';
+      document.getElementById('revBad').value = '';
+      document.getElementById('revNext').value = '';
+      loadReviews();
+      alert('复盘已保存 ✓');
+    }
+    function loadReviews() {
+      let reviews = JSON.parse(localStorage.getItem('xxz_reviews') || '[]');
+      if (reviews.length === 0) reviews = SEED_REVIEWS.slice();
+      const box = document.getElementById('reviewList');
+      box.innerHTML = '';
+      if (reviews.length === 0) {
+        box.innerHTML = '<div style="color:#999;font-size:14px;">还没有复盘记录，发完内容回来填一条。</div>';
+        return;
+      }
+      reviews.slice().reverse().forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'review-item';
+        item.innerHTML = `
+          <div class="review-header">
+            <span>${escapeHtml(r.platform || '未填平台')} · ${r.date}</span>
+          </div>
+          <div style="font-weight:600;margin-bottom:8px;">${escapeHtml(r.title)}</div>
+          ${r.data ? `<p>📊 数据：${escapeHtml(r.data)}</p>` : ''}
+          ${r.good ? `<p>✅ 好的：${escapeHtml(r.good)}</p>` : ''}
+          ${r.bad ? `<p>💡 优化：${escapeHtml(r.bad)}</p>` : ''}
+          ${r.next ? `<p>🎯 下次：${escapeHtml(r.next)}</p>` : ''}
+        `;
+        box.appendChild(item);
+      });
+    }
+    loadReviews();
+
+    // ========== 备忘录 ==========
+    const memoArea = document.getElementById('memoArea');
+    memoArea.value = localStorage.getItem('xxz_memo') || '';
+    memoArea.addEventListener('input', () => {
+      localStorage.setItem('xxz_memo', memoArea.value);
+    });
+
+    // ========== 同步提示 ==========
+    function showSyncTip() {
+      const tip = '📱 把「香香子工作台」装到手机桌面\n\n'
+        + '【最简单·推荐】\n'
+        + '• 在手机浏览器打开本工作台的网址（电脑会把网址发你）\n'
+        + '• iPhone：点 Safari 底部「分享」→「添加到主屏幕」→「添加」\n'
+        + '• 安卓：点浏览器「⋮」菜单 →「添加到主屏幕 / 安装应用」\n'
+        + '• 桌面出现「香香子创作工作台」图标，点开就是 App\n\n'
+        + '【电脑上也能直接用】\n'
+        + '• 双击桌面「香香子工作台.html」即可\n\n'
+        + '⚠️ 数据只存在本机浏览器，手机和电脑不自动同步。';
+      alert(tip);
+    }
+
+    // ========== 热点卡片数据（自媒体向，每日轮换 + 刷新） ==========
+
+    const TREND_DAY = Math.floor(Date.now() / 86400000);
+    let trendStep = 0;
+    function trendCardHtml(t, idx) {
+      const tagHtml = (t.tags||[]).map(function(x){ return '<span class="tag">#'+escapeHtml(x)+'</span>'; }).join(' ');
+      return '<div class="trend" data-kw="' + escapeAttr(t.kw) + '" data-idx="' + (idx||0) + '" data-title="' + escapeAttr(stripNo(t.title)) + '" data-tip="' + escapeAttr(t.tip) + '">'
+        + '<h3>' + escapeHtml(t.title) + '</h3>'
+        + '<div class="meta">' + escapeHtml(t.meta) + '</div>'
+        + '<p>' + tagHtml + '</p>'
+        + '<p><b>为什么适合你：</b>' + escapeHtml(t.why) + '</p>'
+        + '<p><b>口播二创建议：</b>' + escapeHtml(t.tip) + '</p>'
+        + '<div class="trend-actions">'
+        + '<button class="xxz-go-btn" data-act="trend-douyin">▶ 去抖音看真实视频</button>'
+        + '<button class="xxz-mini-btn" data-act="trend-bili">📺 看B站相关</button>'
+        + '<button class="xxz-mini-btn" data-act="trend-task">➕ 加入任务成为灵感</button>'
+        + '<button class="xxz-mini-btn" data-act="trend-save">⭐ 存为灵感</button>'
+        + '<button class="xxz-mini-btn" data-act="trend-forward">🔗 转发文件传输助手</button>'
+        + '<button class="xxz-mini-btn" data-act="trend-swap">🔄 换视频</button>'
+        + '</div></div>';
+    }
+    function renderTrends() {
+      const box = document.getElementById('trendList');
+      if (!box) return;
+      box.innerHTML = '';
+      for (let i = 0; i < 6; i++) {
+        const n = trends.length;
+        const start = ((n - 6 - trendStep) % n + n) % n;
+        const t = trends[(start + i) % n];
+        box.insertAdjacentHTML('beforeend', trendCardHtml(t, (start + i) % n));
+      }
+    }
+    function refreshTrends() { trendStep += 6; renderTrends(); }
+    renderTrends();
+    // ========== 热点素材收集箱：全部热点永久留存，可标记已拍 ==========
+    function renderHotBox() {
+      const box = document.getElementById('hotBox');
+      if (!box) return;
+      const done = JSON.parse(localStorage.getItem('xxz_hot_done') || '{}');
+      box.innerHTML = trends.map(function(t,i){
+        const d = done[i];
+        return '<div class="trend" data-kw="' + escapeAttr(t.kw) + '" data-title="' + escapeAttr(stripNo(t.title)) + '" data-tip="' + escapeAttr(t.tip) + '" style="border-left-color:#2e8b57;' + (d?'opacity:.45;':'') + '">'
+          + '<label style="display:flex;gap:6px;align-items:flex-start;cursor:pointer;">'
+          + '<input type="checkbox" ' + (d?'checked':'') + ' onchange="toggleHot(' + i + ',this.checked)" style="margin-top:4px;">'
+          + '<span><b style="' + (d?'text-decoration:line-through':'') + '">' + t.title + '</b></span></label>'
+          + '<div style="font-size:13px;color:var(--text-sec);margin-top:4px;">' + t.meta + '</div>'
+          + '<div style="font-size:13px;margin-top:4px;">🎯 可拍：' + t.why + '</div>'
+          + '<div style="font-size:13px;margin-top:4px;">💡 拍法：' + t.tip + '</div>'
+          + '<div style="margin-top:6px;">' + (t.tags||[]).map(function(x){return '<span class="tag">#'+x+'</span>';}).join(' ') + '</div>'
+          + '<div class="trend-actions" style="margin-top:8px;">'
+          + '<button class="xxz-go-btn" data-act="trend-douyin">▶ 去抖音看真实视频</button>'
+          + '<button class="xxz-mini-btn" data-act="trend-bili">📺 看B站相关</button>'
+          + '<button class="xxz-mini-btn" data-act="trend-save">⭐ 存为灵感</button>'
+          + '<button class="xxz-mini-btn" data-act="trend-forward">🔗 转发文件传输助手</button>'
+          + '</div>'
+          + '</div>';
+      }).join('');
+    }
+    function toggleHot(i, checked){
+      const done = JSON.parse(localStorage.getItem('xxz_hot_done') || '{}');
+      done[i] = checked;
+      localStorage.setItem('xxz_hot_done', JSON.stringify(done));
+      renderHotBox();
+    }
+    renderHotBox();
+    // ========== 热点卡片交互：去抖音 / 看B站 / 加入任务 / 存为灵感 / 换视频（事件委托） ==========
+    function escapeAttr(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+    function stripNo(t) {
+      return String(t).replace(/^[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙]\s*/, '');
+    }
+    function openSearch(platform, kw) {
+      if (!kw) { alert('这条没有对应搜索词~'); return; }
+      const q = encodeURIComponent(kw);
+      const url = platform === 'bili'
+        ? ('https://search.bilibili.com/all?keyword=' + q)
+        : ('https://www.douyin.com/search/' + q);
+      window.open(url, '_blank');
+    }
+    function flashBtn(btn, msg) {
+      const old = btn.textContent;
+      btn.textContent = msg;
+      setTimeout(function() { btn.textContent = old; }, 1500);
+    }
+    function pushTask(type, text) {
+      const tagMap = { daily:'日常', create:'创作', ops:'运营', other:'其他' };
+      tasks[type].push({ id: type + Date.now(), text: text, done: false, tag: tagMap[type] });
+      saveTasks(); renderTasks();
+    }
+    function saveInspirationText(text) {
+      if (!text) return;
+      const saved = JSON.parse(localStorage.getItem('xxz_inspirations') || '[]');
+      saved.push(text);
+      localStorage.setItem('xxz_inspirations', JSON.stringify(saved));
+      loadSavedInspirations();
+    }
+    function swapTrend(card) {
+      const idx = parseInt(card.getAttribute('data-idx'), 10);
+      const n = trends.length;
+      if (isNaN(idx)) return;
+      const nextIdx = (idx + 7) % n;
+      card.outerHTML = trendCardHtml(trends[nextIdx], nextIdx);
+    }
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.xxz-mini-btn, .xxz-go-btn');
+      if (!btn) return;
+      const act = btn.getAttribute('data-act');
+      const trend = btn.closest('.trend');
+      const kw = (trend && trend.getAttribute('data-kw')) || '';
+      if (act === 'copy') {
+        if (!kw) { alert('这条没有对应搜索词~'); return; }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(kw).then(function(){ flashBtn(btn,'✅ 已复制'); }).catch(function(){ fallbackCopy(kw, btn); });
+        } else { fallbackCopy(kw, btn); }
+        return;
+      }
+      if (act === 'douyin') { openSearch('douyin', kw); return; }
+      if (act === 'trend-douyin') { openSearch('douyin', kw); return; }
+      if (act === 'trend-bili') { openSearch('bili', kw); return; }
+      if (act === 'trend-task') {
+        const title = (trend && trend.getAttribute('data-title')) || '二创热点';
+        pushTask('create', '🎬 二创：' + title);
+        flashBtn(btn, '✅ 已加入任务');
+        return;
+      }
+      if (act === 'trend-save') {
+        const title = (trend && trend.getAttribute('data-title')) || '';
+        saveInspirationText(title);
+        flashBtn(btn, '✅ 已存为灵感');
+        return;
+      }
+      if (act === 'trend-forward') { forwardTrend(trend); return; }
+      if (act === 'trend-swap') { swapTrend(trend); return; }
+    });
+    function fallbackCopy(text, btn) {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+      flashBtn(btn, '✅ 已复制');
+    }
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function(){ fallbackCopySilent(text); });
+      } else { fallbackCopySilent(text); }
+    }
+    function fallbackCopySilent(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+    function forwardTrend(trend) {
+      if (!trend) return;
+      const kw = trend.getAttribute('data-kw') || '';
+      const title = trend.getAttribute('data-title') || '可拍选题';
+      const tip = trend.getAttribute('data-tip') || '';
+      const text = buildForwardText(title, kw, tip);
+      copyText(text);
+      alert('已复制完整文案+链接 ✓\n\n去微信「文件传输助手」粘贴发送，手机上点链接就能直接开拍。');
+    }
+    function buildForwardText(title, kw, tip) {
+      const dy = 'https://www.douyin.com/search/' + encodeURIComponent(kw || title);
+      const bl = 'https://search.bilibili.com/all?keyword=' + encodeURIComponent(kw || title);
+      return '【香香子·今日可拍选题】\n' + title + '\n\n🔍 抖音参考：' + dy + '\n📺 B站参考：' + bl + (tip ? ('\n\n💡 二创建议：' + tip) : '');
+    }
+    function forwardCurrentInspiration() {
+      let text;
+      if (currentInspTrend) {
+        text = buildForwardText(currentInspTrend.title, currentInspTrend.kw, currentInspTrend.tip);
+      } else if (currentInspiration) {
+        text = '【香香子·选题灵感】\n' + currentInspiration + '\n\n💡 可以拍一条口播，或到抖音、B站搜相关视频找参考。';
+      } else {
+        alert('先点「换一批」获取一条灵感~'); return;
+      }
+      copyText(text);
+      alert('已复制 ✓\n\n去微信「文件传输助手」粘贴发送。');
+    }
+
+    // ========== 自媒体成长路线（分阶段技能树） ==========
+    const SKILL_TREE = [
+      {
+        id: 'phase1', icon: '🎯', title: '阶段 1 · 起号准备与定位',
+        goal: '搞清楚你是谁、给谁看、提供什么价值，把账号基础搭好。',
+        pass: '完成定位三问，写好昵称/头像/简介，隐藏无关旧作品，账号视觉统一。',
+        steps: [
+          { text: '用"我是谁+给谁看+提供什么价值"写出定位三句话', video: '', biliKw: '自媒体定位 我是谁 给谁看 提供价值', douyinKw: '自媒体定位三问' },
+          { text: '确定三支柱方向：个人成长+女性成长+自媒体实战', video: '', biliKw: '自媒体三支柱定位', douyinKw: '女性成长自媒体定位' },
+          { text: '统一昵称、头像、简介，让刷到的人一眼知道你是干嘛的', video: '', biliKw: '自媒体昵称头像简介', douyinKw: '口播账号简介怎么写' },
+          { text: '检查历史作品，隐藏与人设严重不符的内容', video: '', biliKw: '自媒体隐藏作品 人设统一', douyinKw: '做自媒体要删除旧视频吗' }
+        ]
+      },
+      {
+        id: 'phase2', icon: '🎬', title: '阶段 2 · 口播拍摄与剪辑',
+        goal: '不追求完美，先能稳定产出真人出镜口播视频。',
+        pass: '用手机+支架+提词器完成10条口播，掌握基础剪辑和字幕。',
+        steps: [
+          { text: '准备基础设备：手机、十几块支架、环形灯或自然光', video: '', biliKw: '口播拍摄设备 手机支架', douyinKw: '口播拍摄需要哪些设备' },
+          { text: '学会用提词器 App，语速控制在自然节奏（不用太快）', video: '', biliKw: '提词器使用教程', douyinKw: '口播提词器怎么用' },
+          { text: '拍够 10 条"不完美但完整"的口播，先跑通流程', video: '', biliKw: '口播新手怎么拍', douyinKw: '新手拍口播注意事项' },
+          { text: '用剪映完成字幕、基础调色、封面大字，导出 1080P', video: '', biliKw: '剪映基础教程 字幕封面', douyinKw: '剪映做口播视频教程' }
+        ]
+      },
+      {
+        id: 'phase3', icon: '✍️', title: '阶段 3 · 选题与文案',
+        goal: '找到观众真正在问的痛点，写出有钩子、有方法、有关注点的口播文案。',
+        pass: '建立选题库≥30条，单条文案严格"一条只讲一件事"，开头3秒强钩子。',
+        steps: [
+          { text: '从评论区、对标账号、热点库收集 30 个真实痛点选题', video: '', biliKw: '自媒体选题库搭建', douyinKw: '口播选题怎么找' },
+          { text: '练习"小林四段式"：观点+经历+感受+方法', video: '', biliKw: '口播四段式 观点经历感受方法', douyinKw: '口播文案结构' },
+          { text: '每条文案只讲一个点，删掉多余内容', video: '', biliKw: '口播一条只讲一件事', douyinKw: '口播视频信息密度' },
+          { text: '开头前 3 秒用颠覆结论/痛点/利益/反差抓人', video: '', biliKw: '短视频钩子开头', douyinKw: '口播开头钩子' },
+          { text: '结尾加固定签名+关注钩子+互动问题', video: '', biliKw: '口播结尾关注钩子', douyinKw: '口播结尾怎么引导关注' }
+        ]
+      },
+      {
+        id: 'phase4', icon: '🚀', title: '阶段 4 · 平台运营与发布',
+        goal: '搞懂视频号、抖音、公众号三端的基本规则，稳定更新。',
+        pass: '三端保持每周≥3更，会看基础数据，不频繁改删，满24h复盘。',
+        steps: [
+          { text: '视频号/抖音/公众号各发一条，测试平台调性', video: '', biliKw: '视频号抖音公众号区别', douyinKw: '视频号和抖音推流区别' },
+          { text: '建立发布节奏：视频号主更、抖音同步、公众号每天早7点', video: '', biliKw: '自媒体多平台分发', douyinKw: '口播多平台发布' },
+          { text: '学会看三个核心数据：完播率、收藏率、转粉率', video: '', biliKw: '自媒体复盘数据指标', douyinKw: '完播率收藏率转粉率' },
+          { text: '发完满 24 小时才复盘，数据差换选题、数据好复制同类', video: '', biliKw: '自媒体复盘方法', douyinKw: '口播复盘怎么做' }
+        ]
+      },
+      {
+        id: 'phase5', icon: '💰', title: '阶段 5 · 变现与长期主义',
+        goal: '把粉丝信任变成可持续收入，同时保持真实人设。',
+        pass: '跑通第一条商业化内容（带货/专栏/社群），建立月复盘习惯。',
+        steps: [
+          { text: '明确变现路径：带货、专栏、社群、接商单，选一条先跑', video: '', biliKw: '自媒体变现路径', douyinKw: '宝妈自媒体怎么变现' },
+          { text: '拍一条"我为什么值得被信任"的真实故事立人设', video: '', biliKw: '自媒体人设故事', douyinKw: '口播人设怎么立' },
+          { text: '测试一条轻变现内容（工具/课程/书），看粉丝反馈', video: '', biliKw: '自媒体轻变现', douyinKw: '自媒体怎么接第一条广告' },
+          { text: '每月做月度复盘：哪些选题涨粉、哪些变现、下月重点', video: '', biliKw: '自媒体月度复盘', douyinKw: '自媒体月度总结' }
+        ]
+      }
+    ];
+    function loadSkillProgress() {
+      return JSON.parse(localStorage.getItem('xxz_skilltree_progress') || '{}');
+    }
+    function saveSkillProgress(p) {
+      localStorage.setItem('xxz_skilltree_progress', JSON.stringify(p));
+    }
+    function isPhaseUnlocked(idx, progress) {
+      if (idx === 0) return true;
+      const prev = SKILL_TREE[idx - 1].id;
+      return progress[prev] && progress[prev].mastered;
+    }
+    function isPhaseMastered(id, progress) {
+      return progress[id] && progress[id].mastered;
+    }
+    function isStepDone(phaseId, stepIdx, progress) {
+      return progress[phaseId] && progress[phaseId].stepsDone && progress[phaseId].stepsDone.indexOf(stepIdx) !== -1;
+    }
+    function toggleStep(phaseId, stepIdx) {
+      const p = loadSkillProgress();
+      if (!p[phaseId]) p[phaseId] = { stepsDone: [], mastered: false };
+      const arr = p[phaseId].stepsDone;
+      const pos = arr.indexOf(stepIdx);
+      if (pos === -1) arr.push(stepIdx); else arr.splice(pos, 1);
+      saveSkillProgress(p);
+      renderSkillTree();
+    }
+    function masterPhase(phaseId) {
+      const p = loadSkillProgress();
+      if (!p[phaseId]) p[phaseId] = { stepsDone: [], mastered: false };
+      p[phaseId].mastered = true;
+      saveSkillProgress(p);
+      renderSkillTree();
+    }
+    function renderSkillTree() {
+      const box = document.getElementById('skillTreeList');
+      if (!box) return;
+      const progress = loadSkillProgress();
+      let masteredCount = 0;
+      let firstOpen = -1;
+      const html = SKILL_TREE.map(function(phase, idx){
+        const mastered = isPhaseMastered(phase.id, progress);
+        const unlocked = isPhaseUnlocked(idx, progress);
+        if (mastered) masteredCount++;
+        const allDone = phase.steps.every(function(_, si){ return isStepDone(phase.id, si, progress); });
+        const open = !mastered && unlocked && firstOpen === -1 ? (firstOpen = idx, true) : false;
+        return renderPhaseCard(phase, idx, { mastered, unlocked, allDone, open }, progress);
+      }).join('');
+      box.innerHTML = html;
+      const fill = document.getElementById('skillProgressFill');
+      const txt = document.getElementById('skillProgressText');
+      if (fill) fill.style.width = ((masteredCount / SKILL_TREE.length) * 100) + '%';
+      if (txt) txt.textContent = '已掌握 ' + masteredCount + '/' + SKILL_TREE.length + ' 阶段';
+    }
+    function renderPhaseCard(phase, idx, state, progress) {
+      const stepsHtml = phase.steps.map(function(step, si){
+        const done = isStepDone(phase.id, si, progress);
+        const videoBtn = step.video
+          ? '<button class="step-btn primary" onclick="openUrl(\'' + escapeAttr(step.video) + '\')">▶ 看教学视频</button>'
+          : '';
+        return '<div class="step-item ' + (done?'done':'') + '">'
+          + '<div class="step-header">'
+          + '<input type="checkbox" class="step-check" ' + (done?'checked':'') + ' onchange="toggleStep(\'' + phase.id + '\',' + si + ')" ' + (state.unlocked?'':'disabled') + '>'
+          + '<div class="step-title ' + (done?'done':'') + '">' + escapeHtml(step.text) + '</div>'
+          + '</div>'
+          + '<div class="step-actions">'
+          + videoBtn
+          + '<button class="step-btn" onclick="openSearch(\'bili\', \'' + escapeAttr(step.biliKw || step.text) + '\')">B站搜更多</button>'
+          + '<button class="step-btn" onclick="openSearch(\'douyin\', \'' + escapeAttr(step.douyinKw || step.text) + '\')">抖音跟练</button>'
+          + '</div>'
+          + '</div>';
+      }).join('');
+      const badge = state.mastered
+        ? '<span class="phase-badge done">已掌握</span>'
+        : (state.unlocked ? '<span class="phase-badge">进行中</span>' : '<span class="phase-badge lock">🔒 未解锁</span>');
+      return '<div class="phase-card ' + (state.open?'open':'') + ' ' + (state.mastered?'mastered':'') + ' ' + (state.unlocked?'':'locked') + '" id="phase-' + phase.id + '">'
+        + '<div class="phase-header" onclick="togglePhase(\'' + phase.id + '\')">'
+        + '<div class="phase-icon">' + phase.icon + '</div>'
+        + '<div class="phase-title-wrap">'
+        + '<div class="phase-title">' + escapeHtml(phase.title) + ' ' + badge + '</div>'
+        + '<div class="phase-sub">' + (state.mastered?'本阶段已完成，继续下一阶吧':'点开来完成小步骤') + '</div>'
+        + '</div>'
+        + '</div>'
+        + '<div class="phase-body">'
+        + '<div class="phase-goal"><b>目标：</b>' + escapeHtml(phase.goal) + '</div>'
+        + '<div class="phase-pass"><b>过关标准：</b>' + escapeHtml(phase.pass) + '</div>'
+        + stepsHtml
+        + (state.unlocked && !state.mastered ? '<div class="phase-footer"><button class="phase-master-btn" onclick="masterPhase(\'' + phase.id + '\')">✅ 标记掌握，解锁下一阶段</button></div>' : '')
+        + '</div>'
+        + '</div>';
+    }
+    function togglePhase(id) {
+      const card = document.getElementById('phase-' + id);
+      if (!card) return;
+      card.classList.toggle('open');
+    }
+    function openUrl(url) {
+      if (!url) return;
+      window.open(url, '_blank');
+    }
+
+    // 初始化渲染
+    renderTasks();
+    renderSkillTree();
+  </script>
+</body>
+</html>
