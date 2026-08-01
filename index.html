@@ -1102,7 +1102,7 @@
             </div>
           </div>
           <p style="font-size:13px;color:var(--text-sec);margin:10px 0 0;">
-            每个阶段点开后有「目标、过关标准、可勾选小步骤」。每步都配了 B站/抖音 搜索词，找不到对应视频就点搜索。前一阶段标记掌握后，下一阶段自动解锁。
+            每个阶段点开后有「目标、过关标准、可勾选小步骤」。每步都配了 B站/抖音/小红书 搜索入口，找不到对应视频就点搜索。前一阶段标记掌握后，下一阶段自动解锁。
           </p>
         </div>
 
@@ -1946,6 +1946,7 @@ const trends = [
           + videoBtn
           + '<button class="step-btn" onclick="openSearch(\'bili\', \'' + escapeAttr(step.biliKw || step.text) + '\')">B站搜更多</button>'
           + '<button class="step-btn" onclick="openSearch(\'douyin\', \'' + escapeAttr(step.douyinKw || step.text) + '\')">抖音跟练</button>'
+          + '<button class="step-btn" onclick="openSearch(\'xhs\', \'' + escapeAttr(step.xhsKw || step.text) + '\')">小红书相关</button>'
           + '</div>'
           + '</div>';
       }).join('');
