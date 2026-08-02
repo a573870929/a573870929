@@ -783,6 +783,24 @@
       background: #f5f5f5; color: #999; border-color: var(--border); cursor: not-allowed;
     }
   </style>
+  /* ===== 视频观看 ===== */
+  .video-add { display:flex; gap:8px; margin:14px 0; }
+  .video-add input { flex:1; padding:10px 12px; border:1px solid #e3ddd2; border-radius:10px; font-size:14px; }
+  .video-layout { display:grid; grid-template-columns:1fr 280px; gap:16px; }
+  .video-player { background:#000; border-radius:12px; overflow:hidden; min-height:320px; display:flex; align-items:center; justify-content:center; }
+  .vid-iframe { width:100%; height:420px; border:0; background:#000; }
+  .vid-empty, .vid-fallback { color:#cfc8bd; text-align:center; padding:40px 20px; font-size:14px; }
+  .vid-fallback a { display:inline-block; margin-top:12px; }
+  .video-list-box { background:#fff; border-radius:12px; padding:12px; border:1px solid #ece6db; }
+  .box-title { font-weight:700; margin-bottom:10px; font-size:14px; }
+  .vid-list { display:flex; flex-direction:column; gap:8px; max-height:420px; overflow:auto; }
+  .vid-item { display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #ece6db; border-radius:10px; cursor:pointer; font-size:13px; }
+  .vid-item.active { border-color:#4a7c59; background:#eef5f0; }
+  .vid-pf { background:#4a7c59; color:#fff; border-radius:6px; padding:2px 6px; font-size:11px; white-space:nowrap; }
+  .vid-url { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .vid-del { color:#bbb; cursor:pointer; }
+  .vid-del:hover { color:#e06c5a; }
+  @media(max-width:768px){ .video-layout{ grid-template-columns:1fr; } .vid-iframe{ height:260px; } }
 </head>
 <body>
   <!-- 移动端顶部栏 -->
@@ -839,6 +857,10 @@
         <button class="nav-item" data-page="skilltree" onclick="showPage('skilltree')">
           <span class="nav-icon">🎓</span>
           <span>成长路线</span>
+        </button>
+        <button class="nav-item" data-page="video" onclick="showPage('video')">
+          <span class="nav-icon">📺</span>
+          <span>视频观看</span>
         </button>
       </nav>
       <div class="sync-tip">
@@ -1232,6 +1254,31 @@
 
         <div id="skillTreeList"></div>
       </section>
+      <!-- ========== 视频观看（内嵌播放） ========== -->
+      <section class="page" id="page-video">
+        <div class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-date" id="vidDate">今日</div>
+            <div class="topbar-title">视频观看</div>
+          </div>
+        </div>
+        <div class="page-body">
+          <p class="muted">粘贴视频链接（抖音 / B站 / 小红书）即可在页面内观看，可存多个、随意切换。B站支持直接内嵌播放；抖音 / 小红书会提供「在 App 打开」按钮。</p>
+          <div class="video-add">
+            <input id="vidUrl" type="text" placeholder="粘贴视频链接，如 https://..." />
+            <button class="btn" onclick="addVideo()">＋ 添加</button>
+          </div>
+          <div class="video-layout">
+            <div class="video-player">
+              <div id="vidFrameBox"><div class="vid-empty">还没有选择视频，从右侧列表点一个，或粘贴链接添加。</div></div>
+            </div>
+            <div class="video-list-box">
+              <div class="box-title">我的视频（点击切换）</div>
+              <div id="vidList" class="vid-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -1245,7 +1292,7 @@
     </div>
   </div>
 
-  <script>
+  <script id="xxz-trends">
 const trends = [
 
   { platform:'通用', kw:'认知觉醒 信息差 普通人 被收割 焦虑营销 自媒体', title:'① 认知觉醒第一步：看清你在为谁的焦虑买单（2026 认知型）', meta:'认知型博主的核心活儿——帮普通人看清信息差。很多人做自媒体这半年，被"速成""月入过万"的焦虑营销推着走，买课、换方向、自我怀疑，其实焦虑是别人故意制造出来卖你解药的。看透这一层，就省下大把冤枉钱和情绪。', tags:['认知觉醒','信息差'], why:'你这半年大概率也被这类焦虑推着绕过弯路。这条让你把"被收割的焦虑"讲成认知觉醒的内容，比教运营技巧更有辨识度、也更戳人。', tip:'拍"我做自媒体半年才看懂：我焦虑的很多东西，是别人故意让我焦虑的"，用你真实心态当案例，落到"普通人怎么不被割"。', angles:["用你被'速成课'割过的真实经历，讲'我交过的智商税'", "从'为什么平台总推焦虑内容'切入，讲注意力怎么被买卖", "反着讲：帮观众做减法，列'哪些焦虑其实不用管'", "用对比体：半年前 vs 现在，你对焦虑的态度变化", "落地体：给3个'识别被割'的具体信号，观众能立刻自查"] },
@@ -1326,22 +1373,71 @@ const trends = [
   <script>
     // ========== 页面切换 ==========
     function showPage(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      document.getElementById('page-' + page).classList.add('active');
-      document.querySelector('.nav-item[data-page="' + page + '"]').classList.add('active');
-      localStorage.setItem('xxz_last_page', page);
+      var p = document.getElementById('page-' + page);
+      if (!p) return;
+      document.querySelectorAll('.page').forEach(function(x){ x.classList.remove('active'); });
+      document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+      p.classList.add('active');
+      var nav = document.querySelector('.nav-item[data-page="' + page + '"]');
+      if (nav) nav.classList.add('active');
+      try { localStorage.setItem('xxz_last_page', page); } catch(e){}
       if (window.innerWidth <= 768) {
-        document.getElementById('sidebar').classList.remove('open');
+        var sb = document.getElementById('sidebar');
+        if (sb) sb.classList.remove('open');
       }
     }
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
     }
 
+    // ========== 视频观看（内嵌播放） ==========
+    function parseVideo(url){
+      url=(url||'').trim(); if(!url) return null;
+      var m;
+      if((m=url.match(/bilibili\.com\/video\/(BV[0-9A-Za-z]+)/))||(m=url.match(/b23\.tv\/(BV[0-9A-Za-z]+)/))){
+        return {platform:'bili', embed:'https://player.bilibili.com/player.html?bvid='+m[1]+'&autoplay=1', url:url};
+      }
+      if((m=url.match(/(BV[0-9A-Za-z]+)/))){ return {platform:'bili', embed:'https://player.bilibili.com/player.html?bvid='+m[1]+'&autoplay=1', url:url}; }
+      if(url.indexOf('douyin.com')>-1||url.indexOf('v.douyin.com')>-1){ return {platform:'douyin', embed:'', url:url}; }
+      if(url.indexOf('xiaohongshu.com')>-1||url.indexOf('xhslink.com')>-1){ return {platform:'xhs', embed:'', url:url}; }
+      return {platform:'unknown', embed:'', url:url};
+    }
+    function getVideos(){ try{ return JSON.parse(localStorage.getItem('xxz_videos')||'[]'); }catch(e){ return []; } }
+    function saveVideos(v){ try{ localStorage.setItem('xxz_videos', JSON.stringify(v)); }catch(e){} }
+    function addVideo(){
+      var inp=document.getElementById('vidUrl'); var url=inp.value.trim();
+      if(!url){ alert('先粘贴视频链接'); return; }
+      var p=parseVideo(url); if(!p) return;
+      var v=getVideos(); v.unshift({url:url, platform:p.platform, ts:Date.now()}); saveVideos(v);
+      inp.value=''; renderVideoList(); playVideo(0);
+    }
+    function renderVideoList(){
+      var list=document.getElementById('vidList'); var v=getVideos();
+      if(!v.length){ list.innerHTML='<div class="muted">还没有保存的视频。</div>'; return; }
+      list.innerHTML=v.map(function(x,i){
+        var name=x.platform==='bili'?'B站':x.platform==='douyin'?'抖音':x.platform==='xhs'?'小红书':'视频';
+        return '<div class="vid-item" onclick="playVideo('+i+')"><span class="vid-pf">'+name+'</span><span class="vid-url">'+escapeHtml(x.url.slice(0,46))+'</span><span class="vid-del" onclick="event.stopPropagation();delVideo('+i+')">✕</span></div>';
+      }).join('');
+    }
+    function playVideo(i){
+      var v=getVideos(); if(!v[i]) return;
+      var p=parseVideo(v[i].url); var box=document.getElementById('vidFrameBox');
+      if(p.platform==='bili'&&p.embed){
+        box.innerHTML='<iframe class="vid-iframe" src="'+p.embed+'" allowfullscreen allow="autoplay; fullscreen"></iframe>';
+      } else {
+        var name=p.platform==='douyin'?'抖音':p.platform==='xhs'?'小红书':'该平台';
+        box.innerHTML='<div class="vid-fallback"><p>'+name+'不支持页面内直接播放。</p><a class="btn" href="'+v[i].url+'" target="_blank" rel="noopener">▶ 在'+name+'打开观看</a></div>';
+      }
+      var items=document.querySelectorAll('.vid-item'); items.forEach(function(el,idx){ el.classList.toggle('active', idx===i); });
+    }
+    function delVideo(i){
+      var v=getVideos(); v.splice(i,1); saveVideos(v); renderVideoList();
+      document.getElementById('vidFrameBox').innerHTML='<div class="vid-empty">已删除。从列表点一个，或粘贴链接添加。</div>';
+    }
+
     // 恢复上次页面
     const lastPage = localStorage.getItem('xxz_last_page') || 'overview';
-    if (lastPage !== 'plan') showPage(lastPage);
+    if (lastPage !== 'plan') { try { showPage(lastPage); } catch(e) { showPage('overview'); } }
 
     // ========== 日期 ==========
     const weekdays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
@@ -1350,6 +1446,7 @@ const trends = [
     document.getElementById('planDate').textContent = dateStr;
     document.getElementById('ovDate').textContent = dateStr;
     document.getElementById('inspDate').textContent = dateStr;
+    var vidDateEl = document.getElementById('vidDate'); if (vidDateEl) vidDateEl.textContent = dateStr;
 
     // ========== 每日计划数据与渲染 ==========
     const defaultTasks = {
