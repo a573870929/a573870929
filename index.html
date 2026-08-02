@@ -1371,6 +1371,9 @@ window.trends = [
 
 </script>
   <script>
+    // 数据块在另一个 script 标签里定义了 window.trends；某些浏览器/协议下跨块访问可能不稳定，这里显式取一次
+    var trends = (typeof window !== 'undefined' && window.trends) ? window.trends : [];
+
     // ========== 页面切换 ==========
     function showPage(page) {
       var p = document.getElementById('page-' + page);
@@ -1894,17 +1897,20 @@ window.trends = [
       document.querySelectorAll('#'+fid+' .pf-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-p')===p); });
     }
     function renderTrends() {
-      const box = document.getElementById('trendList');
-      if (!box) return;
-      const list = trends.map(function(t,i){return {t:t,i:i};}).filter(function(o){return platMatch(o.t, curTrendPlat);});
-      const n = list.length;
-      box.innerHTML = '';
-      if (n === 0) { box.innerHTML = '<p style="color:#999;padding:12px;">这个平台暂时还没有专属热点，通用选题一样能搜~</p>'; return; }
-      const start = ((n - 6 - trendStep) % n + n) % n;
-      for (let i = 0; i < 6 && i < n; i++) {
-        const o = list[(start + i) % n];
-        box.insertAdjacentHTML('beforeend', trendCardHtml(o.t, o.i));
-      }
+      try {
+        const box = document.getElementById('trendList');
+        if (!box) return;
+        if (!trends || !trends.length) { box.innerHTML = '<p style="color:#999;padding:12px;">热点数据加载中，请刷新或稍后再试~</p>'; return; }
+        const list = trends.map(function(t,i){return {t:t,i:i};}).filter(function(o){return platMatch(o.t, curTrendPlat);});
+        const n = list.length;
+        box.innerHTML = '';
+        if (n === 0) { box.innerHTML = '<p style="color:#999;padding:12px;">这个平台暂时还没有专属热点，通用选题一样能搜~</p>'; return; }
+        const start = ((n - 6 - trendStep) % n + n) % n;
+        for (let i = 0; i < 6 && i < n; i++) {
+          const o = list[(start + i) % n];
+          box.insertAdjacentHTML('beforeend', trendCardHtml(o.t, o.i));
+        }
+      } catch (e) { console.error('renderTrends err', e); }
     }
     function refreshTrends() { trendStep += 6; renderTrends(); }
     renderTrends();
@@ -1926,10 +1932,12 @@ window.trends = [
       renderHotBox();
     }
     function renderHotBox() {
-      const box = document.getElementById('hotBox');
-      if (!box) return;
-      const st = loadHotStatus();
-      box.innerHTML = trends.map(function(t,i){
+      try {
+        const box = document.getElementById('hotBox');
+        if (!box) return;
+        if (!trends || !trends.length) { box.innerHTML = '<p style="color:#999;padding:12px;">热点数据加载中，请刷新或稍后再试~</p>'; return; }
+        const st = loadHotStatus();
+        box.innerHTML = trends.map(function(t,i){
         if (!platMatch(t, curLibPlat)) return '';
         const s = st[i] || '待拍';
         if (curLibStatus !== '全部' && s !== curLibStatus) return '';
@@ -1959,6 +1967,7 @@ window.trends = [
           + '</div>'
           + '</div>';
       }).join('');
+      } catch (e) { console.error('renderHotBox err', e); }
     }
     function setHotStatus(i, status) {
       const st = loadHotStatus();
