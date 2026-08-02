@@ -631,25 +631,50 @@
       color: var(--text-sec);
     }
 
-    /* 移动端适配 */
+    /* 移动端适配：侧边栏改为顶部常驻横向滑动导航，不再收起，杜绝溢出挡按钮 */
     @media (max-width: 768px) {
       .sidebar {
-        width: 100%;
-        bottom: auto;
+        position: fixed;
+        top: 56px;
+        left: 0;
         right: 0;
+        bottom: auto;
+        width: 100%;
         height: auto;
-        max-height: 56vh;
+        max-height: none;
         border-right: none;
         border-bottom: 1px solid var(--border);
-        border-radius: 0 0 20px 20px;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        padding-top: calc(12px + var(--safe-top));
+        border-radius: 0;
+        transform: none;
+        transition: none;
+        padding: 8px 10px;
+        z-index: 98;
+        background: var(--sidebar);
+        overflow: visible;
       }
-      .sidebar.open { transform: translateY(0); }
+      .sidebar .brand { display: none; }
+      .sidebar .sync-tip { display: none; }
+      .nav {
+        flex-direction: row;
+        flex: 0 0 auto;
+        margin-top: 0;
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav-item {
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        padding: 8px 14px;
+        font-size: 14px;
+      }
+      .nav-icon { width: 18px; height: 18px; font-size: 14px; }
       .main {
         margin-left: 0;
-        padding: 80px 16px 40px;
+        padding: 130px 16px 40px;
       }
       .mobile-header {
         position: fixed;
@@ -664,15 +689,7 @@
         z-index: 99;
       }
       .mobile-header .brand { margin-bottom: 0; }
-      .menu-btn {
-        width: 36px; height: 36px;
-        border: none;
-        background: rgba(255,255,255,0.15);
-        color: #fff;
-        border-radius: 10px;
-        font-size: 18px;
-        cursor: pointer;
-      }
+      .menu-btn { display: none; }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .board-grid { grid-template-columns: 1fr; }
       .topbar { margin-top: 8px; }
@@ -786,10 +803,20 @@
   .video-add { display:flex; gap:8px; margin:14px 0; }
   .video-add input { flex:1; padding:10px 12px; border:1px solid #e3ddd2; border-radius:10px; font-size:14px; }
   .video-layout { display:grid; grid-template-columns:1fr 280px; gap:16px; }
-  .video-player { background:#000; border-radius:12px; overflow:hidden; min-height:320px; display:flex; align-items:center; justify-content:center; }
-  .vid-iframe { width:100%; height:420px; border:0; background:#000; }
-  .vid-empty, .vid-fallback { color:#cfc8bd; text-align:center; padding:40px 20px; font-size:14px; }
-  .vid-fallback a { display:inline-block; margin-top:12px; }
+  .video-main { min-width:0; }
+  .video-player { position:relative; background:#000; border-radius:12px; overflow:hidden; min-height:320px; display:flex; align-items:center; justify-content:center; }
+  .vid-label { position:absolute; top:10px; left:10px; z-index:2; background:rgba(0,0,0,.55); color:#fff; font-size:12px; padding:4px 10px; border-radius:20px; backdrop-filter:blur(2px); }
+  .vid-iframe { width:100%; height:420px; border:0; background:#000; display:block; }
+  .vid-empty { color:#cfc8bd; text-align:center; padding:40px 20px; font-size:14px; }
+  .vid-poster { width:100%; height:420px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#3a5a45,#26402f); color:#fff; box-sizing:border-box; padding:20px; }
+  .vid-poster-icon { width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-size:26px; }
+  .vid-poster-name { font-size:18px; font-weight:700; }
+  .vid-poster-tip { font-size:13px; opacity:.85; text-align:center; }
+  .vid-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+  .vid-actions .btn { background:#4a7c59; color:#fff; border:none; border-radius:10px; padding:10px 16px; font-size:14px; text-decoration:none; cursor:pointer; }
+  .vid-actions .btn:hover { background:#3f6b4d; }
+  .vid-actions .btn.ghost { background:#fff; color:#4a7c59; border:1px solid #4a7c59; }
+  .vid-help { font-size:13px; color:#4a7c59; text-decoration:underline; align-self:center; cursor:pointer; }
   .video-list-box { background:#fff; border-radius:12px; padding:12px; border:1px solid #ece6db; }
   .box-title { font-weight:700; margin-bottom:10px; font-size:14px; }
   .vid-list { display:flex; flex-direction:column; gap:8px; max-height:420px; overflow:auto; }
@@ -799,7 +826,7 @@
   .vid-url { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .vid-del { color:#bbb; cursor:pointer; }
   .vid-del:hover { color:#e06c5a; }
-  @media(max-width:768px){ .video-layout{ grid-template-columns:1fr; } .vid-iframe{ height:260px; } }
+  @media(max-width:768px){ .video-layout{ grid-template-columns:1fr; } .vid-iframe{ height:260px; } .vid-poster{ height:260px; } }
   </style>
 </head>
 <body>
@@ -1269,8 +1296,12 @@
             <button class="btn" onclick="addVideo()">＋ 添加</button>
           </div>
           <div class="video-layout">
-            <div class="video-player">
-              <div id="vidFrameBox"><div class="vid-empty">还没有选择视频，从右侧列表点一个，或粘贴链接添加。</div></div>
+            <div class="video-main">
+              <div class="video-player">
+                <div class="vid-label" id="vidLabel" style="display:none">视频来自哔哩哔哩</div>
+                <div id="vidFrameBox"><div class="vid-empty">还没有选择视频，从右侧列表点一个，或粘贴链接添加。</div></div>
+              </div>
+              <div id="vidActions" class="vid-actions"></div>
             </div>
             <div class="video-list-box">
               <div class="box-title">我的视频（点击切换）</div>
@@ -1394,9 +1425,11 @@ window.trends = [
     }
 
     // ========== 视频观看（内嵌播放） ==========
-    function parseVideo(url){
-      url=(url||'').trim(); if(!url) return null;
-      var m;
+    function parseVideo(raw){
+      var url=(raw||'').trim(); if(!url) return null;
+      // 从整段分享文案里提取真正的 http/https 链接
+      var m=url.match(/https?:\/\/[^\s"'，。）】]+/);
+      if(m){ url=m[0].replace(/[，。）】!?]+$/, ''); }
       if((m=url.match(/bilibili\.com\/video\/(BV[0-9A-Za-z]+)/))||(m=url.match(/b23\.tv\/(BV[0-9A-Za-z]+)/))){
         return {platform:'bili', embed:'https://player.bilibili.com/player.html?bvid='+m[1]+'&autoplay=1', url:url};
       }
@@ -1405,13 +1438,26 @@ window.trends = [
       if(url.indexOf('xiaohongshu.com')>-1||url.indexOf('xhslink.com')>-1){ return {platform:'xhs', embed:'', url:url}; }
       return {platform:'unknown', embed:'', url:url};
     }
-    function getVideos(){ try{ return JSON.parse(localStorage.getItem('xxz_videos')||'[]'); }catch(e){ return []; } }
+    function getVideos(){
+      try{
+        var v=JSON.parse(localStorage.getItem('xxz_videos')||'[]');
+        // 自动修复旧版存进去的脏链接（分享文案而不是真实URL）
+        var changed=false;
+        v.forEach(function(x){
+          if(!x.url) return;
+          var p=parseVideo(x.url);
+          if(p && (p.url!==x.url || p.platform!==x.platform)){ x.url=p.url; x.platform=p.platform; changed=true; }
+        });
+        if(changed) saveVideos(v);
+        return v;
+      }catch(e){ return []; }
+    }
     function saveVideos(v){ try{ localStorage.setItem('xxz_videos', JSON.stringify(v)); }catch(e){} }
     function addVideo(){
-      var inp=document.getElementById('vidUrl'); var url=inp.value.trim();
-      if(!url){ alert('先粘贴视频链接'); return; }
-      var p=parseVideo(url); if(!p) return;
-      var v=getVideos(); v.unshift({url:url, platform:p.platform, ts:Date.now()}); saveVideos(v);
+      var inp=document.getElementById('vidUrl'); var raw=inp.value.trim();
+      if(!raw){ alert('先粘贴视频链接'); return; }
+      var p=parseVideo(raw); if(!p) return;
+      var v=getVideos(); v.unshift({url:p.url, platform:p.platform, ts:Date.now()}); saveVideos(v);
       inp.value=''; renderVideoList(); playVideo(0);
     }
     function renderVideoList(){
@@ -1424,12 +1470,29 @@ window.trends = [
     }
     function playVideo(i){
       var v=getVideos(); if(!v[i]) return;
-      var p=parseVideo(v[i].url); var box=document.getElementById('vidFrameBox');
+      var p=parseVideo(v[i].url);
+      var box=document.getElementById('vidFrameBox');
+      var label=document.getElementById('vidLabel');
+      var actions=document.getElementById('vidActions');
+      var openUrl=p.url||v[i].url||'';
+      if(openUrl && !/^https?:\/\//i.test(openUrl)){ openUrl='https://'+openUrl; }
+      var name=p.platform==='bili'?'B站':p.platform==='douyin'?'抖音':p.platform==='xhs'?'小红书':'该平台';
       if(p.platform==='bili'&&p.embed){
+        label.style.display='block';
         box.innerHTML='<iframe class="vid-iframe" src="'+p.embed+'" allowfullscreen allow="autoplay; fullscreen"></iframe>';
+        actions.innerHTML=
+          '<a class="btn" href="'+openUrl+'" target="_blank" rel="noopener">🔗 去B站看原视频</a>'+
+          '<a class="btn ghost" href="https://search.bilibili.com/all?keyword='+encodeURIComponent('自媒体运营')+'" target="_blank" rel="noopener">🔍 B站搜更多</a>';
       } else {
-        var name=p.platform==='douyin'?'抖音':p.platform==='xhs'?'小红书':'该平台';
-        box.innerHTML='<div class="vid-fallback"><p>'+name+'不支持页面内直接播放。</p><a class="btn" href="'+v[i].url+'" target="_blank" rel="noopener">▶ 在'+name+'打开观看</a></div>';
+        label.style.display='none';
+        box.innerHTML='<div class="vid-poster"><div class="vid-poster-icon">▶</div><div class="vid-poster-name">'+name+'视频</div><div class="vid-poster-tip">该平台不支持页面内直接播放，点下方按钮去 App 看原视频</div></div>';
+        var searchUrl = p.platform==='douyin'
+          ? 'https://www.douyin.com/search/'+encodeURIComponent('自媒体运营')
+          : (p.platform==='xhs' ? 'https://www.xiaohongshu.com/search_result?keyword='+encodeURIComponent('自媒体运营') : openUrl);
+        actions.innerHTML=
+          '<a class="btn" href="'+openUrl+'" target="_blank" rel="noopener">▶ 在'+name+'打开观看</a>'+
+          (searchUrl!==openUrl ? '<a class="btn ghost" href="'+searchUrl+'" target="_blank" rel="noopener">🔍 '+name+'搜更多</a>' : '')+
+          '<a class="vid-help" href="'+openUrl+'" target="_blank" rel="noopener">打不开？点此去'+name+'看原视频</a>';
       }
       var items=document.querySelectorAll('.vid-item'); items.forEach(function(el,idx){ el.classList.toggle('active', idx===i); });
     }
