@@ -1973,10 +1973,22 @@ window.trends = [
         const box = document.getElementById('trendList');
         if (!box) return;
         if (!trends || !trends.length) { box.innerHTML = '<p style="color:#999;padding:12px;">热点数据加载中，请刷新或稍后再试~</p>'; return; }
-        const list = trends.map(function(t,i){return {t:t,i:i};}).filter(function(o){return platMatch(o.t, curTrendPlat);});
+        const allList = trends.map(function(t,i){return {t:t,i:i};}).filter(function(o){return platMatch(o.t, curTrendPlat);});
+        let list = allList;
+        var _dates = list.map(function(o){ var m=(o.t.title||'').match(/(\d{4})-(\d{2})-(\d{2})/); return m?m[0]:''; }).filter(Boolean).sort();
+        if (_dates.length) {
+          var _d = new Date(_dates[_dates.length-1]); _d.setDate(_d.getDate()-1);
+          var _cutoff = _d.toISOString().slice(0,10);
+          var _recent = list.filter(function(o){ var m=(o.t.title||'').match(/(\d{4})-(\d{2})-(\d{2})/); return m && m[0]>=_cutoff; });
+          if (_recent.length) list = _recent;
+        }
         const n = list.length;
+        const nAll = allList.length;
         box.innerHTML = '';
         if (n === 0) { box.innerHTML = '<p style="color:#999;padding:12px;">这个平台暂时还没有专属热点，通用选题一样能搜~</p>'; return; }
+        if (n < nAll) {
+          box.insertAdjacentHTML('beforeend', '<p style="color:#666;font-size:13px;padding:8px 12px;background:#f0f5ff;border-radius:8px;margin-bottom:10px;">📌 以下为最近2天新增热点（'+n+'条），查看全部 '+nAll+' 条请点「热点素材库」</p>');
+        }
         const start = ((n - 6 - trendStep) % n + n) % n;
         for (let i = 0; i < 6 && i < n; i++) {
           const o = list[(start + i) % n];
