@@ -1560,9 +1560,9 @@ window.trends = [
       }
       // 每日重置：新的一天清空勾选状态（任务清单保留），让每日计划真正"每日更新"
       const prevTasksDate = localStorage.getItem('xxz_tasks_date');
-      if (prevTasksDate && prevTasksDate !== dateStr) {
-        // 跨天：先把"昨天"的完成情况存进打卡记录（即使忘了点打卡也不丢）
-        snapshotCheckin(prevTasksDate, data);
+      if (!prevTasksDate || prevTasksDate !== dateStr) {
+        // 跨天或首次：先把"昨天"的完成情况存进打卡记录（即使忘了点打卡也不丢）；首次不存档
+        if (prevTasksDate) snapshotCheckin(prevTasksDate, data);
         ['daily','create','ops','other'].forEach(type => {
           (data[type] || []).forEach(t => { if (t && 'done' in t) t.done = false; });
         });
