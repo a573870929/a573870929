@@ -2366,8 +2366,25 @@ window.trends = [
         ]
       }
     ];
+    // 默认初始进度：恢复到「第 4 阶段」(phase1~phase4 已掌握，phase5 解锁未掌握)
+    // 仅当 localStorage 为空/损坏时生效；用户一旦手动操作即持久化，不再走默认。
+    function getDefaultSkillProgress() {
+      return {
+        phase1: { stepsDone: [], mastered: true },
+        phase2: { stepsDone: [], mastered: true },
+        phase3: { stepsDone: [], mastered: true },
+        phase4: { stepsDone: [], mastered: true }
+      };
+    }
     function loadSkillProgress() {
-      return JSON.parse(localStorage.getItem('xxz_skilltree_progress') || '{}');
+      try {
+        const raw = localStorage.getItem('xxz_skilltree_progress');
+        if (!raw) return getDefaultSkillProgress();
+        const p = JSON.parse(raw);
+        return (p && typeof p === 'object') ? p : getDefaultSkillProgress();
+      } catch (e) {
+        return getDefaultSkillProgress();
+      }
     }
     function saveSkillProgress(p) {
       localStorage.setItem('xxz_skilltree_progress', JSON.stringify(p));
